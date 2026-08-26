@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Galeria - Nova Explorer</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="Galeria.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- =====================================================
+         MENU LATERAL
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <!-- LOGO -->
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+
+            <div class="brand-name">
+                <strong>Nova</strong>
+                <span>Explorer</span>
+            </div>
+
+        </div>
+
+
+        <div class="sidebar-content">
+
+            <!-- PRINCIPAL -->
+
+            <div class="sidebar-group">
+
+                <span class="sidebar-title">
+                    Principal
+                </span>
+
+                <nav class="navigation">
+
+                    <a
+                        href="../PaginaInicial/Paginainicial.html"
+                        class="nav-item"
+                    >
+                        <i class="fa-solid fa-house"></i>
+                        <span>Início</span>
+                    </a>
+
+                    <a
+                        href="../MeusArquivos/MeusArquivos.html"
+                        class="nav-item"
+                    >
+                        <i class="fa-regular fa-folder"></i>
+                        <span>Meus arquivos</span>
+                    </a>
+
+                    <a
+                        href="../PesquisaInteligente/PesquisaInteligente.html"
+                        class="nav-item"
+                    >
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <span>Pesquisa inteligente</span>
+                    </a>
+
+                    <a
+                        href="../Timeline/Timeline.html"
+                        class="nav-item"
+                    >
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <span>Timeline</span>
+                    </a>
+
+                    <a
+                        href="Galeria.html"
+                        class="nav-item active"
+                    >
+                        <i class="fa-regular fa-images"></i>
+                        <span>Galeria</span>
+                    </a>
+
+                    <a
+                        href="../Tags/tags.html"
+                        class="nav-item"
+                    >
+                        <i class="fa-solid fa-tags"></i>
+                        <span>Tags</span>
+                    </a>
+
+                </nav>
+
+            </div>
+
+
+            <!-- DISPOSITIVOS -->
+
+            <div class="sidebar-group devices-group">
+
+                <div class="sidebar-title-row">
+
+                    <span class="sidebar-title">
+                        Dispositivos
+                    </span>
+
+                    <button class="small-icon-button">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="devices">
+
+                    <div class="device-item">
+
+                        <div class="device-icon computer">
+                            <i class="fa-solid fa-laptop"></i>
+                        </div>
+
+                        <div class="device-info">
+
+                            <strong>
+                                Meu computador
+                            </strong>
+
+                            <span>
+                                Este dispositivo
+                            </span>
+
+                        </div>
+
+                        <span class="status-dot"></span>
+
+                    </div>
+
+
+                    <div class="device-item">
+
+                        <div class="device-icon phone">
+                            <i class="fa-solid fa-mobile-screen"></i>
+                        </div>
+
+                        <div class="device-info">
+
+                            <strong>
+                                Meu celular
+                            </strong>
+
+                            <span>
+                                Conectado
+                            </span>
+
+                        </div>
+
+                        <span class="status-dot"></span>
+
+                    </div>
+
+
+                    <div class="device-item">
+
+                        <div class="device-icon cloud">
+                            <i class="fa-solid fa-cloud"></i>
+                        </div>
+
+                        <div class="device-info">
+
+                            <strong>
+                                Minha nuvem
+                            </strong>
+
+                            <span>
+                                Sincronizado
+                            </span>
+
+                        </div>
+
+                        <span class="status-dot"></span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RODAPÉ -->
+
+        <div class="sidebar-footer">
+
+            <a href="#" class="footer-item">
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>Configurações</span>
+
+            </a>
+
+
+            <div class="profile-mini">
+
+                <div class="profile-avatar">
+                    A
+                </div>
+
+                <div class="profile-info">
+
+                    <strong>Ana</strong>
+
+                    <span>Conta pessoal</span>
+
+                </div>
+
+                <button class="small-icon-button">
+
+                    <i class="fa-solid fa-ellipsis"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         ÁREA PRINCIPAL
+    ====================================================== -->
+
+    <main class="main">
+
+
+        <!-- =================================================
+             NAVBAR
+        ================================================== -->
+
+        <header class="navbar">
+
+            <div class="navigation-controls">
+
+                <button
+                    class="navbar-button"
+                    title="Voltar"
+                >
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+
+                <button
+                    class="navbar-button disabled"
+                    title="Avançar"
+                >
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+                <button
+                    class="navbar-button"
+                    title="Atualizar"
+                >
+                    <i class="fa-solid fa-rotate-right"></i>
+                </button>
+
+            </div>
+
+
+            <div class="location-bar">
+
+                <div class="location-home">
+                    <i class="fa-solid fa-house"></i>
+                </div>
+
+                <i class="fa-solid fa-chevron-right location-arrow"></i>
+
+                <span class="current-location">
+                    Galeria
+                </span>
+
+                <button class="location-more">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+            </div>
+
+
+            <div class="global-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    placeholder="Pesquisar em seus arquivos..."
+                    aria-label="Pesquisar em seus arquivos"
+                >
+
+                <span class="search-key">
+                    Ctrl K
+                </span>
+
+            </div>
+
+
+            <div class="navbar-actions">
+
+                <button
+                    class="navbar-button"
+                    title="Notificações"
+                >
+                    <i class="fa-regular fa-bell"></i>
+                </button>
+
+                <button
+                    class="navbar-button"
+                    title="Mais opções"
+                >
+                    <i class="fa-solid fa-ellipsis"></i>
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             CONTEÚDO DA GALERIA
+        ================================================== -->
+
+        <div class="page">
+
+
+            <!-- CABEÇALHO -->
+
+            <section class="gallery-header">
+
+                <div>
+
+                    <span class="section-label">
+                        GALERIA
+                    </span>
+
+                    <h1>
+                        Suas fotos e vídeos
+                    </h1>
+
+                    <p>
+                        Encontre suas memórias de forma simples e organizada.
+                    </p>
+
+                </div>
+
+
+                <button class="view-button" title="Alterar visualização">
+
+                    <i class="fa-solid fa-grip"></i>
+
+                </button>
+
+            </section>
+
+
+            <!-- PESQUISA -->
+
+            <section class="gallery-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="gallerySearch"
+                    placeholder="Pesquisar fotos, pessoas, lugares..."
+                >
+
+                <button
+                    class="search-filter"
+                    title="Filtros"
+                >
+                    <i class="fa-solid fa-sliders"></i>
+                </button>
+
+            </section>
+
+
+            <!-- FILTROS -->
+
+            <div class="gallery-filters">
+
+                <button
+                    class="filter-button active"
+                    data-filter="all"
+                >
+                    Todas
+                </button>
+
+                <button
+                    class="filter-button"
+                    data-filter="photo"
+                >
+                    <i class="fa-regular fa-image"></i>
+                    Fotos
+                </button>
+
+                <button
+                    class="filter-button"
+                    data-filter="video"
+                >
+                    <i class="fa-solid fa-play"></i>
+                    Vídeos
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                 PESSOAS
+            ================================================== -->
+
+            <section class="gallery-section">
+
+                <div class="gallery-section-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            IDENTIFICADOS
+                        </span>
+
+                        <h2>
+                            Pessoas
+                        </h2>
+
+                    </div>
+
+                    <button class="section-link">
+                        Ver todas
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="people-list">
+
+
+                    <button class="person-card">
+
+                        <div class="person-image">
+
+                            <img
+                                src="https://randomuser.me/api/portraits/women/44.jpg"
+                                alt="Pessoa identificada"
+                            >
+
+                        </div>
+
+                        <strong>
+                            Pessoa 1
+                        </strong>
+
+                        <span>
+                            24 fotos
+                        </span>
+
+                    </button>
+
+
+                    <button class="person-card">
+
+                        <div class="person-image">
+
+                            <img
+                                src="https://randomuser.me/api/portraits/men/32.jpg"
+                                alt="Pessoa identificada"
+                            >
+
+                        </div>
+
+                        <strong>
+                            Pessoa 2
+                        </strong>
+
+                        <span>
+                            18 fotos
+                        </span>
+
+                    </button>
+
+
+                    <button class="person-card">
+
+                        <div class="person-image">
+
+                            <img
+                                src="https://randomuser.me/api/portraits/women/65.jpg"
+                                alt="Pessoa identificada"
+                            >
+
+                        </div>
+
+                        <strong>
+                            Pessoa 3
+                        </strong>
+
+                        <span>
+                            15 fotos
+                        </span>
+
+                    </button>
+
+
+                    <button class="person-card">
+
+                        <div class="person-image">
+
+                            <img
+                                src="https://randomuser.me/api/portraits/men/52.jpg"
+                                alt="Pessoa identificada"
+                            >
+
+                        </div>
+
+                        <strong>
+                            Pessoa 4
+                        </strong>
+
+                        <span>
+                            11 fotos
+                        </span>
+
+                    </button>
+
+
+                    <button class="person-card">
+
+                        <div class="person-image">
+
+                            <img
+                                src="https://randomuser.me/api/portraits/women/33.jpg"
+                                alt="Pessoa identificada"
+                            >
+
+                        </div>
+
+                        <strong>
+                            Pessoa 5
+                        </strong>
+
+                        <span>
+                            8 fotos
+                        </span>
+
+                    </button>
+
+
+                    <button class="person-card more-persons">
+
+                        <div class="person-more-icon">
+
+                            <i class="fa-solid fa-users"></i>
+
+                        </div>
+
+                        <strong>
+                            +12 pessoas
+                        </strong>
+
+                        <span>
+                            Ver identificados
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 ANIMAIS
+            ================================================== -->
+
+            <section class="gallery-section">
+
+                <div class="gallery-section-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            RECONHECIMENTO
+                        </span>
+
+                        <h2>
+                            Animais
+                        </h2>
+
+                    </div>
+
+                    <button class="section-link">
+                        Ver todos
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="animal-list">
+
+                    <button class="animal-card">
+
+                        <div class="animal-icon dog">
+                            <i class="fa-solid fa-dog"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Cachorros
+                            </strong>
+
+                            <span>
+                                36 fotos
+                            </span>
+
+                        </div>
+
+                    </button>
+
+
+                    <button class="animal-card">
+
+                        <div class="animal-icon cat">
+                            <i class="fa-solid fa-cat"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Gatos
+                            </strong>
+
+                            <span>
+                                21 fotos
+                            </span>
+
+                        </div>
+
+                    </button>
+
+
+                    <button class="animal-card">
+
+                        <div class="animal-icon bird">
+                            <i class="fa-solid fa-dove"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Outros animais
+                            </strong>
+
+                            <span>
+                                9 fotos
+                            </span>
+
+                        </div>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 FOTOS
+            ================================================== -->
+
+            <section class="gallery-section photos-section">
+
+                <div class="gallery-section-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            SUAS MEMÓRIAS
+                        </span>
+
+                        <h2>
+                            Fotos recentes
+                        </h2>
+
+                    </div>
+
+                    <div class="gallery-sort">
+
+                        <span>
+                            Ordenar por
+                        </span>
+
+                        <select id="sortSelect">
+
+                            <option value="recent">
+                                Mais recentes
+                            </option>
+
+                            <option value="oldest">
+                                Mais antigas
+                            </option>
+
+                            <option value="name">
+                                Nome
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- HOJE -->
+
+                <div class="date-group">
+
+                    <div class="date-title">
+                        Hoje
+                    </div>
+
+
+                    <div class="photo-grid">
+
+
+                        <article
+                            class="photo-card"
+                            data-type="photo"
+                            data-name="faculdade"
+                        >
+
+                            <img
+                                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=700&q=80"
+                                alt="Foto de pessoas estudando"
+                            >
+
+                            <div class="photo-overlay">
+
+                                <span>
+                                    Faculdade
+                                </span>
+
+                            </div>
+
+                        </article>
+
+
+                        <article
+                            class="photo-card"
+                            data-type="photo"
+                            data-name="viagem"
+                        >
+
+                            <img
+                                src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=700&q=80"
+                                alt="Paisagem"
+                            >
+
+                            <div class="photo-overlay">
+
+                                <span>
+                                    Viagem
+                                </span>
+
+                            </div>
+
+                        </article>
+
+
+                        <article
+                            class="photo-card"
+                            data-type="video"
+                            data-name="video viagem"
+                        >
+
+                            <img
+                                src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=700&q=80"
+                                alt="Vídeo de viagem"
+                            >
+
+                            <div class="video-indicator">
+
+                                <i class="fa-solid fa-play"></i>
+
+                            </div>
+
+                            <div class="photo-overlay">
+
+                                <span>
+                                    Vídeo · 00:42
+                                </span>
+
+                            </div>
+
+                        </article>
+
+
+                        <article
+                            class="photo-card"
+                            data-type="photo"
+                            data-name="natureza"
+                        >
+
+                            <img
+                                src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=700&q=80"
+                                alt="Foto de natureza"
+                            >
+
+                            <div class="photo-overlay">
+
+                                <span>
+                                    Natureza
+                                </span>
+
+                            </div>
+
+                        </article>
+
+
+                        <article
+                            class="photo-card"
+                            data-type="photo"
+                            data-name="cidade"
+                        >
+
+                            <img
+                                src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=700&q=80"
+                                alt="Foto da cidade"
+                            >
+
+                            <div class="photo-overlay">
+
+                                <span>
+                                    Cidade
+                                </span>
+
+                            </div>
+
+                        </article>
+
+
+                        <article
+                            class="photo-card"
+                            data-type="photo"
+                            data-name="praia"
+                        >
+
+                            <img
+                                src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=700&q=80"
+                                alt="Foto de praia"
+                            >
+
+                            <div class="photo-overlay">
+
+                                <span>
+                                    Praia
+                                </span>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ONTEM -->
+
+                <div class="date-group">
+
+                    <div class="date-title">
+                        Ontem
+                    </div>
+
+
+                    <div class="photo-grid">
+
+
+                        <article
+                            class="photo-card"
+                            data-type="photo"
+                            data-name="cachorro"
+                        >
+
+                            <img
+                                src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=700&q=80"
+                                alt="Cachorro"
+                            >
+
+                            <div class="photo-overlay">
+
+                                <span>
+                                    Cachorro
+                                </span>
+
+                            </div>
+
+                        </article>
+
+
+                        <article
+                            class="photo-card"
+                            data-type="photo"
+                            data-name="gato"
+                        >
+
+                            <img
+                                src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=700&q=80"
+                                alt="Gato"
+                            >
+
+                            <div class="photo-overlay">
+
+                                <span>
+                                    Gato
+                                </span>
+
+                            </div>
+
+                        </article>
+
+
+                        <article
+                            class="photo-card"
+                            data-type="video"
+                            data-name="pet cachorro"
+                        >
+
+                            <img
+                                src="https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=700&q=80"
+                                alt="Vídeo de cachorro"
+                            >
+
+                            <div class="video-indicator">
+
+                                <i class="fa-solid fa-play"></i>
+
+                            </div>
+
+                            <div class="photo-overlay">
+
+                                <span>
+                                    Vídeo · 01:12
+                                </span>
+
+                            </div>
+
+                        </article>
+
+
+                        <article
+                            class="photo-card"
+                            data-type="photo"
+                            data-name="familia"
+                        >
+
+                            <img
+                                src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=700&q=80"
+                                alt="Família"
+                            >
+
+                            <div class="photo-overlay">
+
+                                <span>
+                                    Família
+                                </span>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+
+                <!-- AGOSTO -->
+
+                <div class="date-group">
+
+                    <div class="date-title">
+                        Agosto de 2026
+                    </div>
+
+
+                    <div class="photo-grid">
+
+                        <article
+                            class="photo-card"
+                            data-type="photo"
+                            data-name="paisagem"
+                        >
+
+                            <img
+                                src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=700&q=80"
+                                alt="Paisagem"
+                            >
+
+                        </article>
+
+
+                        <article
+                            class="photo-card"
+                            data-type="photo"
+                            data-name="montanha"
+                        >
+
+                            <img
+                                src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=700&q=80"
+                                alt="Montanhas"
+                            >
+
+                        </article>
+
+
+                        <article
+                            class="photo-card"
+                            data-type="photo"
+                            data-name="floresta"
+                        >
+
+                            <img
+                                src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=700&q=80"
+                                alt="Floresta"
+                            >
+
+                        </article>
+
+
+                        <article
+                            class="photo-card"
+                            data-type="video"
+                            data-name="natureza video"
+                        >
+
+                            <img
+                                src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=700&q=80"
+                                alt="Vídeo de natureza"
+                            >
+
+                            <div class="video-indicator">
+
+                                <i class="fa-solid fa-play"></i>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- =================================================
+             VISUALIZAÇÃO DA FOTO
+        ================================================== -->
+
+        <div
+            class="photo-modal"
+            id="photoModal"
+        >
+
+            <button
+                class="modal-close"
+                id="modalClose"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <img
+                id="modalImage"
+                src=""
+                alt="Visualização da imagem"
+            >
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script src="Galeria.js"></script>
+
+</body>
+</html>

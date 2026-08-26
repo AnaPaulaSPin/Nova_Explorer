@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meus Arquivos - Nova Explorer</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="MeusArquivos.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- =====================================================
+             MENU LATERAL
+        ====================================================== -->
+
+        <aside class="sidebar">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+
+                <div class="brand-name">
+                    <strong>Nova</strong>
+                    <span>Explorer</span>
+                </div>
+
+            </div>
+
+            <div class="sidebar-content">
+
+                <div class="sidebar-group">
+
+                    <span class="sidebar-title">
+                        Principal
+                    </span>
+
+                    <nav class="navigation">
+
+                        <a
+                            href="../PaginaInicial/Paginainicial.html"
+                            class="nav-item"
+                        >
+                            <i class="fa-solid fa-house"></i>
+                            <span>Início</span>
+                        </a>
+
+                        <a
+                            href="MeusArquivos.html"
+                            class="nav-item active"
+                        >
+                            <i class="fa-regular fa-folder"></i>
+                            <span>Meus arquivos</span>
+                        </a>
+
+                        <a
+                            href="../PesquisaInteligente/PesquisaInteligente.html"
+                            class="nav-item"
+                        >
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            <span>Pesquisa inteligente</span>
+                        </a>
+
+                        <a href="../Timeline/Timeline.html" class="nav-item">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                            <span>Timeline</span>
+                        </a>
+
+                        <a href="../Galeria/galeria.html" class="nav-item">
+                            <i class="fa-regular fa-images"></i>
+                            <span>Galeria</span>
+                        </a>
+
+                        <a href="../Tags/tags.html" class="nav-item">
+                            <i class="fa-solid fa-tags"></i>
+                            <span>Tags</span>
+                        </a>
+
+                    </nav>
+
+                </div>
+
+                <div class="sidebar-group devices-group">
+
+                    <div class="sidebar-title-row">
+
+                        <span class="sidebar-title">
+                            Dispositivos
+                        </span>
+
+                        <button class="small-icon-button">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+
+                    </div>
+
+                    <div class="devices">
+
+                        <div class="device-item">
+
+                            <div class="device-icon computer">
+                                <i class="fa-solid fa-laptop"></i>
+                            </div>
+
+                            <div class="device-info">
+
+                                <strong>
+                                    Meu computador
+                                </strong>
+
+                                <span>
+                                    Este dispositivo
+                                </span>
+
+                            </div>
+
+                            <span class="status-dot"></span>
+
+                        </div>
+
+                        <div class="device-item">
+
+                            <div class="device-icon phone">
+                                <i class="fa-solid fa-mobile-screen"></i>
+                            </div>
+
+                            <div class="device-info">
+
+                                <strong>
+                                    Meu celular
+                                </strong>
+
+                                <span>
+                                    Conectado
+                                </span>
+
+                            </div>
+
+                            <span class="status-dot"></span>
+
+                        </div>
+
+                        <div class="device-item">
+
+                            <div class="device-icon cloud">
+                                <i class="fa-solid fa-cloud"></i>
+                            </div>
+
+                            <div class="device-info">
+
+                                <strong>
+                                    Minha nuvem
+                                </strong>
+
+                                <span>
+                                    Sincronizado
+                                </span>
+
+                            </div>
+
+                            <span class="status-dot"></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="sidebar-footer">
+
+                <a href="#" class="footer-item">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    <span>Configurações</span>
+
+                </a>
+
+                <div class="profile-mini">
+
+                    <div class="profile-avatar">
+                        A
+                    </div>
+
+                    <div class="profile-info">
+
+                        <strong>Ana</strong>
+
+                        <span>Conta pessoal</span>
+
+                    </div>
+
+                    <button class="small-icon-button">
+
+                        <i class="fa-solid fa-ellipsis"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =====================================================
+             ÁREA PRINCIPAL
+        ====================================================== -->
+
+        <main class="main">
+
+
+            <!-- =================================================
+                 NAVBAR
+            ================================================== -->
+
+            <header class="navbar">
+
+                <div class="navigation-controls">
+
+                    <button
+                        class="navbar-button"
+                        title="Voltar"
+                    >
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+
+                    <button
+                        class="navbar-button disabled"
+                        title="Avançar"
+                    >
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                    <button
+                        class="navbar-button"
+                        title="Atualizar"
+                    >
+                        <i class="fa-solid fa-rotate-right"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="location-bar">
+
+                    <div class="location-home">
+
+                        <i class="fa-solid fa-house"></i>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-right location-arrow"></i>
+
+                    <span class="current-location">
+                        Meus arquivos
+                    </span>
+
+                    <button class="location-more">
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </button>
+
+                </div>
+
+
+                <div class="global-search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        placeholder="Pesquisar em seus arquivos..."
+                        aria-label="Pesquisar em seus arquivos"
+                    >
+
+                    <span class="search-key">
+                        Ctrl K
+                    </span>
+
+                </div>
+
+
+                <div class="navbar-actions">
+
+                    <button
+                        class="navbar-button"
+                        title="Notificações"
+                    >
+                        <i class="fa-regular fa-bell"></i>
+                    </button>
+
+                    <button
+                        class="navbar-button"
+                        title="Mais opções"
+                    >
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================================
+                 CONTEÚDO — MEUS ARQUIVOS
+            ================================================== -->
+
+            <div class="page">
+
+
+                <!-- CABEÇALHO -->
+
+                <section class="files-header">
+
+                    <div class="files-title">
+
+                        <span class="section-label">
+                            ARQUIVOS
+                        </span>
+
+                        <h1>
+                            Meus arquivos
+                        </h1>
+
+                        <p>
+                            Acesse, organize e gerencie todos os seus arquivos.
+                        </p>
+
+                    </div>
+
+
+                    <button class="new-button">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        Novo
+
+                    </button>
+
+                </section>
+
+
+                <!-- ARMAZENAMENTO -->
+
+                <section class="storage-card">
+
+                    <div class="storage-card-icon">
+
+                        <i class="fa-solid fa-cloud"></i>
+
+                    </div>
+
+                    <div class="storage-card-content">
+
+                        <div class="storage-card-header">
+
+                            <div>
+
+                                <strong>
+                                    Armazenamento
+                                </strong>
+
+                                <span>
+                                    7,4 GB de 10 GB utilizados
+                                </span>
+
+                            </div>
+
+                            <span class="storage-percent">
+                                74%
+                            </span>
+
+                        </div>
+
+                        <div class="storage-progress">
+
+                            <span style="width: 74%;"></span>
+
+                        </div>
+
+                    </div>
+
+                    <button class="storage-button">
+                        Gerenciar
+                    </button>
+
+                </section>
+
+
+                <!-- BARRA DE FERRAMENTAS -->
+
+                <section class="files-toolbar">
+
+                    <div class="breadcrumb">
+
+                        <i class="fa-solid fa-house"></i>
+
+                        <i class="fa-solid fa-chevron-right"></i>
+
+                        <strong>
+                            Meus arquivos
+                        </strong>
+
+                    </div>
+
+
+                    <div class="toolbar-actions">
+
+                        <button
+                            class="toolbar-button"
+                            title="Ordenar"
+                        >
+
+                            <i class="fa-solid fa-arrow-down-wide-short"></i>
+
+                            Ordenar
+
+                        </button>
+
+
+                        <button
+                            class="toolbar-icon"
+                            title="Visualização em lista"
+                        >
+
+                            <i class="fa-solid fa-list"></i>
+
+                        </button>
+
+
+                        <button
+                            class="toolbar-icon"
+                            title="Visualização em grade"
+                        >
+
+                            <i class="fa-solid fa-grip"></i>
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- PASTAS -->
+
+                <section class="files-section">
+
+                    <div class="section-heading">
+
+                        <div>
+
+                            <span class="section-label">
+                                PASTAS
+                            </span>
+
+                            <h2>
+                                Suas pastas
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="folder-grid">
+
+
+                        <article class="folder-card">
+
+                            <div class="folder-icon blue">
+
+                                <i class="fa-solid fa-folder"></i>
+
+                            </div>
+
+                            <div class="folder-info">
+
+                                <strong>
+                                    Faculdade
+                                </strong>
+
+                                <span>
+                                    24 arquivos
+                                </span>
+
+                            </div>
+
+                            <button class="file-more">
+
+                                <i class="fa-solid fa-ellipsis"></i>
+
+                            </button>
+
+                        </article>
+
+
+                        <article class="folder-card">
+
+                            <div class="folder-icon purple">
+
+                                <i class="fa-solid fa-folder"></i>
+
+                            </div>
+
+                            <div class="folder-info">
+
+                                <strong>
+                                    Projetos
+                                </strong>
+
+                                <span>
+                                    18 arquivos
+                                </span>
+
+                            </div>
+
+                            <button class="file-more">
+
+                                <i class="fa-solid fa-ellipsis"></i>
+
+                            </button>
+
+                        </article>
+
+
+                        <article class="folder-card">
+
+                            <div class="folder-icon pink">
+
+                                <i class="fa-solid fa-folder"></i>
+
+                            </div>
+
+                            <div class="folder-info">
+
+                                <strong>
+                                    Imagens
+                                </strong>
+
+                                <span>
+                                    86 arquivos
+                                </span>
+
+                            </div>
+
+                            <button class="file-more">
+
+                                <i class="fa-solid fa-ellipsis"></i>
+
+                            </button>
+
+                        </article>
+
+
+                        <article class="folder-card">
+
+                            <div class="folder-icon cyan">
+
+                                <i class="fa-solid fa-folder"></i>
+
+                            </div>
+
+                            <div class="folder-info">
+
+                                <strong>
+                                    Documentos
+                                </strong>
+
+                                <span>
+                                    42 arquivos
+                                </span>
+
+                            </div>
+
+                            <button class="file-more">
+
+                                <i class="fa-solid fa-ellipsis"></i>
+
+                            </button>
+
+                        </article>
+
+
+                    </div>
+
+                </section>
+
+
+                <!-- ARQUIVOS -->
+
+                <section class="files-section">
+
+                    <div class="section-heading">
+
+                        <div>
+
+                            <span class="section-label">
+                                TODOS OS ARQUIVOS
+                            </span>
+
+                            <h2>
+                                Arquivos
+                            </h2>
+
+                        </div>
+
+                        <span class="file-count">
+                            428 arquivos
+                        </span>
+
+                    </div>
+
+
+                    <div class="files-table">
+
+
+                        <!-- CABEÇALHO -->
+
+                        <div class="file-row file-header">
+
+                            <span>
+                                Nome
+                            </span>
+
+                            <span>
+                                Local
+                            </span>
+
+                            <span>
+                                Modificado
+                            </span>
+
+                            <span>
+                                Tamanho
+                            </span>
+
+                            <span></span>
+
+                        </div>
+
+
+                        <!-- PDF -->
+
+                        <div class="file-row">
+
+                            <div class="file-name">
+
+                                <div class="file-icon pdf">
+
+                                    <i class="fa-solid fa-file-pdf"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Resumo_Banco_de_Dados.pdf
+                                    </strong>
+
+                                    <span>
+                                        PDF
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                            <span class="file-location">
+                                Faculdade
+                            </span>
+
+                            <span class="file-date">
+                                Hoje, 10:32
+                            </span>
+
+                            <span class="file-size">
+                                2,4 MB
+                            </span>
+
+                            <button class="file-more">
+
+                                <i class="fa-solid fa-ellipsis"></i>
+
+                            </button>
+
+                        </div>
+
+
+                        <!-- WORD -->
+
+                        <div class="file-row">
+
+                            <div class="file-name">
+
+                                <div class="file-icon word">
+
+                                    <i class="fa-solid fa-file-word"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Projeto_Explorer.docx
+                                    </strong>
+
+                                    <span>
+                                        Documento Word
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                            <span class="file-location">
+                                Projetos
+                            </span>
+
+                            <span class="file-date">
+                                Hoje, 09:15
+                            </span>
+
+                            <span class="file-size">
+                                1,8 MB
+                            </span>
+
+                            <button class="file-more">
+
+                                <i class="fa-solid fa-ellipsis"></i>
+
+                            </button>
+
+                        </div>
+
+
+                        <!-- IMAGEM -->
+
+                        <div class="file-row">
+
+                            <div class="file-name">
+
+                                <div class="file-icon image">
+
+                                    <i class="fa-solid fa-file-image"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Interface_Explorer.png
+                                    </strong>
+
+                                    <span>
+                                        Imagem PNG
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                            <span class="file-location">
+                                Imagens
+                            </span>
+
+                            <span class="file-date">
+                                Ontem, 18:42
+                            </span>
+
+                            <span class="file-size">
+                                3,2 MB
+                            </span>
+
+                            <button class="file-more">
+
+                                <i class="fa-solid fa-ellipsis"></i>
+
+                            </button>
+
+                        </div>
+
+
+                        <!-- PDF -->
+
+                        <div class="file-row">
+
+                            <div class="file-name">
+
+                                <div class="file-icon pdf">
+
+                                    <i class="fa-solid fa-file-pdf"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Redes_II.pdf
+                                    </strong>
+
+                                    <span>
+                                        PDF
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                            <span class="file-location">
+                                Faculdade
+                            </span>
+
+                            <span class="file-date">
+                                Ontem, 16:20
+                            </span>
+
+                            <span class="file-size">
+                                4,7 MB
+                            </span>
+
+                            <button class="file-more">
+
+                                <i class="fa-solid fa-ellipsis"></i>
+
+                            </button>
+
+                        </div>
+
+
+                        <!-- POWERPOINT -->
+
+                        <div class="file-row">
+
+                            <div class="file-name">
+
+                                <div class="file-icon powerpoint">
+
+                                    <i class="fa-solid fa-file-powerpoint"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Apresentacao_PET.pptx
+                                    </strong>
+
+                                    <span>
+                                        PowerPoint
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                            <span class="file-location">
+                                Projetos
+                            </span>
+
+                            <span class="file-date">
+                                25 ago. 2026
+                            </span>
+
+                            <span class="file-size">
+                                5,1 MB
+                            </span>
+
+                            <button class="file-more">
+
+                                <i class="fa-solid fa-ellipsis"></i>
+
+                            </button>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

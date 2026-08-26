@@ -1,0 +1,788 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pesquisa Inteligente - Nova Explorer</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="PesquisaInteligente.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- =====================================================
+             MENU LATERAL
+        ====================================================== -->
+
+        <aside class="sidebar">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+
+                <div class="brand-name">
+                    <strong>Nova</strong>
+                    <span>Explorer</span>
+                </div>
+
+            </div>
+
+            <div class="sidebar-content">
+
+                <div class="sidebar-group">
+
+                    <span class="sidebar-title">
+                        Principal
+                    </span>
+
+                    <nav class="navigation">
+
+                        <a
+                            href="../PaginaInicial/Paginainicial.html"
+                            class="nav-item"
+                        >
+                            <i class="fa-solid fa-house"></i>
+                            <span>Início</span>
+                        </a>
+
+                        <a
+                            href="../MeusArquivos/MeusArquivos.html"
+                            class="nav-item"
+                        >
+                            <i class="fa-regular fa-folder"></i>
+                            <span>Meus arquivos</span>
+                        </a>
+
+                        <a
+                            href="PesquisaInteligente.html"
+                            class="nav-item active"
+                        >
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            <span>Pesquisa inteligente</span>
+                        </a>
+
+                        <a href="../Timeline/Timeline.html" class="nav-item">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                            <span>Timeline</span>
+                        </a>
+
+                        <a href="../Galeria/galeria.html" class="nav-item">
+                            <i class="fa-regular fa-images"></i>
+                            <span>Galeria</span>
+                        </a>
+
+                        <a href="../Tags/tags.html" class="nav-item">
+                            <i class="fa-solid fa-tags"></i>
+                            <span>Tags</span>
+                        </a>
+
+                    </nav>
+
+                </div>
+
+                <div class="sidebar-group devices-group">
+
+                    <div class="sidebar-title-row">
+
+                        <span class="sidebar-title">
+                            Dispositivos
+                        </span>
+
+                        <button class="small-icon-button">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+
+                    </div>
+
+                    <div class="devices">
+
+                        <div class="device-item">
+
+                            <div class="device-icon computer">
+                                <i class="fa-solid fa-laptop"></i>
+                            </div>
+
+                            <div class="device-info">
+
+                                <strong>
+                                    Meu computador
+                                </strong>
+
+                                <span>
+                                    Este dispositivo
+                                </span>
+
+                            </div>
+
+                            <span class="status-dot"></span>
+
+                        </div>
+
+                        <div class="device-item">
+
+                            <div class="device-icon phone">
+                                <i class="fa-solid fa-mobile-screen"></i>
+                            </div>
+
+                            <div class="device-info">
+
+                                <strong>
+                                    Meu celular
+                                </strong>
+
+                                <span>
+                                    Conectado
+                                </span>
+
+                            </div>
+
+                            <span class="status-dot"></span>
+
+                        </div>
+
+                        <div class="device-item">
+
+                            <div class="device-icon cloud">
+                                <i class="fa-solid fa-cloud"></i>
+                            </div>
+
+                            <div class="device-info">
+
+                                <strong>
+                                    Minha nuvem
+                                </strong>
+
+                                <span>
+                                    Sincronizado
+                                </span>
+
+                            </div>
+
+                            <span class="status-dot"></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="sidebar-footer">
+
+                <a href="#" class="footer-item">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    <span>Configurações</span>
+
+                </a>
+
+                <div class="profile-mini">
+
+                    <div class="profile-avatar">
+                        A
+                    </div>
+
+                    <div class="profile-info">
+
+                        <strong>Ana</strong>
+
+                        <span>Conta pessoal</span>
+
+                    </div>
+
+                    <button class="small-icon-button">
+
+                        <i class="fa-solid fa-ellipsis"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =====================================================
+             ÁREA PRINCIPAL
+        ====================================================== -->
+
+        <main class="main">
+
+
+            <!-- =================================================
+                 NAVBAR
+            ================================================== -->
+
+            <header class="navbar">
+
+                <div class="navigation-controls">
+
+                    <button
+                        class="navbar-button"
+                        title="Voltar"
+                    >
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+
+                    <button
+                        class="navbar-button disabled"
+                        title="Avançar"
+                    >
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                    <button
+                        class="navbar-button"
+                        title="Atualizar"
+                    >
+                        <i class="fa-solid fa-rotate-right"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="location-bar">
+
+                    <div class="location-home">
+                        <i class="fa-solid fa-house"></i>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-right location-arrow"></i>
+
+                    <span class="current-location">
+                        Pesquisa inteligente
+                    </span>
+
+                    <button class="location-more">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="global-search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        placeholder="Pesquisar em seus arquivos..."
+                        aria-label="Pesquisar em seus arquivos"
+                    >
+
+                    <span class="search-key">
+                        Ctrl K
+                    </span>
+
+                </div>
+
+
+                <div class="navbar-actions">
+
+                    <button
+                        class="navbar-button"
+                        title="Notificações"
+                    >
+                        <i class="fa-regular fa-bell"></i>
+                    </button>
+
+                    <button
+                        class="navbar-button"
+                        title="Mais opções"
+                    >
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================================
+                 CONTEÚDO
+            ================================================== -->
+
+            <div class="page">
+
+
+                <!-- =================================================
+                     CABEÇALHO
+                ================================================== -->
+
+                <section class="search-header">
+
+                    <span class="section-label">
+                        NOVA AI
+                    </span>
+
+                    <h1>
+                        Pesquisa inteligente
+                    </h1>
+
+                    <p>
+                        Encontre seus arquivos usando uma descrição
+                        simples, como se estivesse conversando.
+                    </p>
+
+                </section>
+
+
+                <!-- =================================================
+                     ÁREA PRINCIPAL DE PESQUISA
+                ================================================== -->
+
+                <section class="smart-search-card">
+
+                    <div class="smart-search-icon">
+
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                    </div>
+
+
+                    <div class="smart-search-content">
+
+                        <span class="search-label">
+                            O QUE VOCÊ ESTÁ PROCURANDO?
+                        </span>
+
+                        <form
+                            class="smart-search-form"
+                            id="smartSearchForm"
+                        >
+
+                            <input
+                                type="text"
+                                id="smartSearchInput"
+                                placeholder="Ex.: encontre os arquivos da faculdade modificados esta semana..."
+                                autocomplete="off"
+                            >
+
+                            <button
+                                type="submit"
+                                class="smart-search-button"
+                                title="Pesquisar"
+                            >
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </button>
+
+                        </form>
+
+
+                        <div class="search-hint">
+
+                            <i class="fa-solid fa-sparkles"></i>
+
+                            Você pode pesquisar por nome, tipo,
+                            data, localização ou conteúdo.
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     SUGESTÕES
+                ================================================== -->
+
+                <section class="suggestions-section">
+
+                    <div class="section-heading">
+
+                        <div>
+
+                            <span class="section-label">
+                                SUGESTÕES
+                            </span>
+
+                            <h2>
+                                Experimente pesquisar assim
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="suggestions-grid">
+
+
+                        <button
+                            class="suggestion-card"
+                            data-query="Encontre meus arquivos da faculdade"
+                        >
+
+                            <div class="suggestion-icon blue">
+
+                                <i class="fa-solid fa-graduation-cap"></i>
+
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Arquivos da faculdade
+                                </strong>
+
+                                <span>
+                                    Encontre documentos relacionados aos estudos
+                                </span>
+
+                            </div>
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+
+                        <button
+                            class="suggestion-card"
+                            data-query="Mostre os arquivos modificados recentemente"
+                        >
+
+                            <div class="suggestion-icon purple">
+
+                                <i class="fa-regular fa-clock"></i>
+
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Arquivos recentes
+                                </strong>
+
+                                <span>
+                                    Veja o que foi modificado recentemente
+                                </span>
+
+                            </div>
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+
+                        <button
+                            class="suggestion-card"
+                            data-query="Encontre minhas imagens"
+                        >
+
+                            <div class="suggestion-icon pink">
+
+                                <i class="fa-regular fa-images"></i>
+
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Minhas imagens
+                                </strong>
+
+                                <span>
+                                    Encontre fotos e imagens armazenadas
+                                </span>
+
+                            </div>
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     RESULTADOS
+                ================================================== -->
+
+                <section
+                    class="results-section"
+                    id="resultsSection"
+                >
+
+                    <div class="results-header">
+
+                        <div>
+
+                            <span class="section-label">
+                                RESULTADOS
+                            </span>
+
+                            <h2 id="resultsTitle">
+                                Encontre o que precisa
+                            </h2>
+
+                        </div>
+
+                        <div class="result-tools">
+
+                            <button class="filter-button">
+
+                                <i class="fa-solid fa-sliders"></i>
+
+                                Filtros
+
+                            </button>
+
+                            <button class="filter-button">
+
+                                <i class="fa-solid fa-arrow-down-wide-short"></i>
+
+                                Relevância
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ESTADO INICIAL -->
+
+                    <div
+                        class="empty-results"
+                        id="emptyResults"
+                    >
+
+                        <div class="empty-icon">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                        </div>
+
+                        <strong>
+                            A pesquisa inteligente está pronta.
+                        </strong>
+
+                        <span>
+                            Digite uma frase acima para encontrar
+                            arquivos de forma mais natural.
+                        </span>
+
+                    </div>
+
+
+                    <!-- RESULTADOS -->
+
+                    <div
+                        class="results-list"
+                        id="resultsList"
+                    >
+
+
+                        <article class="result-card">
+
+                            <div class="result-icon pdf">
+
+                                <i class="fa-solid fa-file-pdf"></i>
+
+                            </div>
+
+                            <div class="result-content">
+
+                                <strong>
+                                    Resumo_Banco_de_Dados.pdf
+                                </strong>
+
+                                <span>
+                                    Faculdade · PDF · 2,4 MB
+                                </span>
+
+                                <p>
+                                    Arquivo relacionado aos estudos
+                                    de Banco de Dados.
+                                </p>
+
+                            </div>
+
+                            <div class="result-relevance">
+
+                                <span>
+                                    96%
+                                </span>
+
+                                <small>
+                                    relevância
+                                </small>
+
+                            </div>
+
+                            <button
+                                class="result-more"
+                                title="Mais opções"
+                            >
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </button>
+
+                        </article>
+
+
+                        <article class="result-card">
+
+                            <div class="result-icon word">
+
+                                <i class="fa-solid fa-file-word"></i>
+
+                            </div>
+
+                            <div class="result-content">
+
+                                <strong>
+                                    Projeto_Explorer.docx
+                                </strong>
+
+                                <span>
+                                    Projetos · Word · 1,8 MB
+                                </span>
+
+                                <p>
+                                    Documento relacionado ao desenvolvimento
+                                    do Nova Explorer.
+                                </p>
+
+                            </div>
+
+                            <div class="result-relevance">
+
+                                <span>
+                                    89%
+                                </span>
+
+                                <small>
+                                    relevância
+                                </small>
+
+                            </div>
+
+                            <button
+                                class="result-more"
+                                title="Mais opções"
+                            >
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </button>
+
+                        </article>
+
+
+                        <article class="result-card">
+
+                            <div class="result-icon image">
+
+                                <i class="fa-solid fa-file-image"></i>
+
+                            </div>
+
+                            <div class="result-content">
+
+                                <strong>
+                                    Interface_Explorer.png
+                                </strong>
+
+                                <span>
+                                    Imagens · PNG · 3,2 MB
+                                </span>
+
+                                <p>
+                                    Captura da interface do projeto
+                                    Nova Explorer.
+                                </p>
+
+                            </div>
+
+                            <div class="result-relevance">
+
+                                <span>
+                                    82%
+                                </span>
+
+                                <small>
+                                    relevância
+                                </small>
+
+                            </div>
+
+                            <button
+                                class="result-more"
+                                title="Mais opções"
+                            >
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </button>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     EXPLICAÇÃO DA PESQUISA
+                ================================================== -->
+
+                <section class="ai-info">
+
+                    <div class="ai-info-icon">
+
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            COMO FUNCIONA
+                        </span>
+
+                        <strong>
+                            Pesquise do seu jeito.
+                        </strong>
+
+                        <p>
+                            A Nova entende o contexto da sua pesquisa
+                            e pode combinar informações como nome,
+                            tipo, data, pasta e conteúdo dos arquivos.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script src="PesquisaInteligente.js"></script>
+
+</body>
+
+</html>
+```

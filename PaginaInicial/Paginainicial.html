@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nova Explorer</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="PaginaInicial.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+
+        <!-- =====================================================
+             MENU LATERAL
+        ====================================================== -->
+
+        <aside class="sidebar">
+
+            <!-- LOGO -->
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+
+                <div class="brand-name">
+                    <strong>Nova</strong>
+                    <span>Explorer</span>
+                </div>
+
+            </div>
+
+
+            <div class="sidebar-content">
+
+
+                <!-- PRINCIPAL -->
+
+                <div class="sidebar-group">
+
+                    <span class="sidebar-title">
+                        Principal
+                    </span>
+
+
+                    <nav class="navigation">
+
+
+                        <!-- INÍCIO -->
+
+                        <a
+                            href="Paginainicial.html"
+                            class="nav-item active"
+                        >
+
+                            <i class="fa-solid fa-house"></i>
+
+                            <span>Início</span>
+
+                        </a>
+
+
+                        <!-- MEUS ARQUIVOS -->
+
+                        <a
+                            href="../MeusArquivos/MeusArquivos.html"
+                            class="nav-item"
+                        >
+
+                            <i class="fa-regular fa-folder"></i>
+
+                            <span>Meus arquivos</span>
+
+                        </a>
+
+
+                        <!-- PESQUISA INTELIGENTE -->
+
+                        <a
+                            href="../PesquisaInteligente/PesquisaInteligente.html"
+                            class="nav-item"
+                        >
+
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                            <span>Pesquisa inteligente</span>
+
+                        </a>
+
+
+                        <!-- TIMELINE -->
+
+                        <a
+                            href="#"
+                            class="nav-item"
+                        >
+
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+
+                            <span>Timeline</span>
+
+                        </a>
+
+
+                        <!-- GALERIA -->
+
+                        <a
+                            href="#"
+                            class="nav-item"
+                        >
+
+                            <i class="fa-regular fa-images"></i>
+
+                            <span>Galeria</span>
+
+                        </a>
+
+
+                        <!-- TAGS -->
+
+                        <a
+                            href="#"
+                            class="nav-item"
+                        >
+
+                            <i class="fa-solid fa-tags"></i>
+
+                            <span>Tags</span>
+
+                        </a>
+
+                    </nav>
+
+                </div>
+
+
+                <!-- DISPOSITIVOS -->
+
+                <div class="sidebar-group devices-group">
+
+                    <div class="sidebar-title-row">
+
+                        <span class="sidebar-title">
+                            Dispositivos
+                        </span>
+
+                        <button class="small-icon-button">
+
+                            <i class="fa-solid fa-plus"></i>
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="devices">
+
+
+                        <!-- COMPUTADOR -->
+
+                        <div class="device-item">
+
+                            <div class="device-icon computer">
+
+                                <i class="fa-solid fa-laptop"></i>
+
+                            </div>
+
+                            <div class="device-info">
+
+                                <strong>
+                                    Meu computador
+                                </strong>
+
+                                <span>
+                                    Este dispositivo
+                                </span>
+
+                            </div>
+
+                            <span class="status-dot"></span>
+
+                        </div>
+
+
+                        <!-- CELULAR -->
+
+                        <div class="device-item">
+
+                            <div class="device-icon phone">
+
+                                <i class="fa-solid fa-mobile-screen"></i>
+
+                            </div>
+
+                            <div class="device-info">
+
+                                <strong>
+                                    Meu celular
+                                </strong>
+
+                                <span>
+                                    Conectado
+                                </span>
+
+                            </div>
+
+                            <span class="status-dot"></span>
+
+                        </div>
+
+
+                        <!-- NUVEM -->
+
+                        <div class="device-item">
+
+                            <div class="device-icon cloud">
+
+                                <i class="fa-solid fa-cloud"></i>
+
+                            </div>
+
+                            <div class="device-info">
+
+                                <strong>
+                                    Minha nuvem
+                                </strong>
+
+                                <span>
+                                    Sincronizado
+                                </span>
+
+                            </div>
+
+                            <span class="status-dot"></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RODAPÉ DO MENU -->
+
+            <div class="sidebar-footer">
+
+                <a href="#" class="footer-item">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    <span>Configurações</span>
+
+                </a>
+
+
+                <div class="profile-mini">
+
+                    <div class="profile-avatar">
+                        A
+                    </div>
+
+                    <div class="profile-info">
+
+                        <strong>Ana</strong>
+
+                        <span>Conta pessoal</span>
+
+                    </div>
+
+                    <button class="small-icon-button">
+
+                        <i class="fa-solid fa-ellipsis"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =====================================================
+             ÁREA PRINCIPAL
+        ====================================================== -->
+
+        <main class="main">
+
+
+            <!-- =================================================
+                 BARRA SUPERIOR DE NAVEGAÇÃO
+            ================================================== -->
+
+            <header class="navbar">
+
+
+                <!-- CONTROLES DE NAVEGAÇÃO -->
+
+                <div class="navigation-controls">
+
+                    <button
+                        class="navbar-button"
+                        title="Voltar"
+                    >
+
+                        <i class="fa-solid fa-arrow-left"></i>
+
+                    </button>
+
+
+                    <button
+                        class="navbar-button disabled"
+                        title="Avançar"
+                    >
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+
+                    <button
+                        class="navbar-button"
+                        title="Atualizar"
+                    >
+
+                        <i class="fa-solid fa-rotate-right"></i>
+
+                    </button>
+
+                </div>
+
+
+                <!-- ÁREA DE LOCALIZAÇÃO -->
+
+                <div class="location-bar">
+
+
+                    <div class="location-home">
+
+                        <i class="fa-solid fa-house"></i>
+
+                    </div>
+
+
+                    <i class="fa-solid fa-chevron-right location-arrow"></i>
+
+
+                    <span class="current-location">
+                        Início
+                    </span>
+
+
+                    <button class="location-more">
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </button>
+
+                </div>
+
+
+                <!-- PESQUISA NORMAL -->
+
+                <div class="global-search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        placeholder="Pesquisar em seus arquivos..."
+                        aria-label="Pesquisar em seus arquivos"
+                    >
+
+                    <span class="search-key">
+                        Ctrl K
+                    </span>
+
+                </div>
+
+
+                <!-- AÇÕES -->
+
+                <div class="navbar-actions">
+
+                    <button
+                        class="navbar-button"
+                        title="Notificações"
+                    >
+
+                        <i class="fa-regular fa-bell"></i>
+
+                    </button>
+
+
+                    <button
+                        class="navbar-button"
+                        title="Mais opções"
+                    >
+
+                        <i class="fa-solid fa-ellipsis"></i>
+
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================================
+                 CONTEÚDO
+            ================================================== -->
+
+            <div class="page">
+
+
+                <!-- HERO -->
+
+                <section class="hero">
+
+                    <div class="hero-content">
+
+                        <span class="hero-label">
+
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                            NOVA EXPLORER
+
+                        </span>
+
+
+                        <h1>
+                            Tudo o que você precisa,<br>
+                            <span>em um só lugar.</span>
+                        </h1>
+
+
+                        <p>
+                            Organize, encontre e acompanhe seus arquivos
+                            de uma forma mais simples e inteligente.
+                        </p>
+
+
+                        <a
+                            href="../PesquisaInteligente/PesquisaInteligente.html"
+                            class="hero-button"
+                        >
+
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                            Experimentar pesquisa inteligente
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- MASCOTE -->
+
+                    <div class="hero-mascot">
+
+                        <div class="mascot-glow"></div>
+
+                        <div class="mascot">
+
+                            <div class="mascot-face">
+
+                                <span class="eye left"></span>
+                                <span class="eye right"></span>
+                                <span class="mouth"></span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="mascot-sparkle sparkle-one">
+
+                            <i class="fa-solid fa-star"></i>
+
+                        </div>
+
+
+                        <div class="mascot-sparkle sparkle-two">
+
+                            <i class="fa-solid fa-star"></i>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ACESSO RÁPIDO -->
+
+                <section class="section">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <span class="section-label">
+                                ACESSO RÁPIDO
+                            </span>
+
+                            <h2>
+                                Onde você quer ir?
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="quick-grid">
+
+
+                        <a
+                            href="../MeusArquivos/MeusArquivos.html"
+                            class="quick-card primary-card"
+                        >
+
+                            <div class="quick-icon">
+
+                                <i class="fa-regular fa-folder-open"></i>
+
+                            </div>
+
+                            <div class="quick-content">
+
+                                <strong>
+                                    Meus arquivos
+                                </strong>
+
+                                <span>
+                                    Visualize e organize seus arquivos
+                                </span>
+
+                            </div>
+
+                            <i class="fa-solid fa-arrow-right card-arrow"></i>
+
+                        </a>
+
+
+                        <a
+                            href="../PesquisaInteligente/PesquisaInteligente.html"
+                            class="quick-card ai-card"
+                        >
+
+                            <div class="quick-icon">
+
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                            </div>
+
+                            <div class="quick-content">
+
+                                <strong>
+                                    Pesquisa inteligente
+                                </strong>
+
+                                <span>
+                                    Encontre arquivos usando linguagem natural
+                                </span>
+
+                            </div>
+
+                            <i class="fa-solid fa-arrow-right card-arrow"></i>
+
+                        </a>
+
+
+                        <a
+                            href="#"
+                            class="quick-card"
+                        >
+
+                            <div class="quick-icon timeline-icon">
+
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+
+                            </div>
+
+                            <div class="quick-content">
+
+                                <strong>
+                                    Timeline
+                                </strong>
+
+                                <span>
+                                    Explore seus arquivos por data
+                                </span>
+
+                            </div>
+
+                            <i class="fa-solid fa-arrow-right card-arrow"></i>
+
+                        </a>
+
+
+                        <a
+                            href="#"
+                            class="quick-card"
+                        >
+
+                            <div class="quick-icon gallery-icon">
+
+                                <i class="fa-regular fa-images"></i>
+
+                            </div>
+
+                            <div class="quick-content">
+
+                                <strong>
+                                    Galeria
+                                </strong>
+
+                                <span>
+                                    Fotos e capturas organizadas
+                                </span>
+
+                            </div>
+
+                            <i class="fa-solid fa-arrow-right card-arrow"></i>
+
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+                <!-- DISPOSITIVOS -->
+
+                <section class="section">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <span class="section-label">
+                                SEUS DISPOSITIVOS
+                            </span>
+
+                            <h2>
+                                Tudo conectado
+                            </h2>
+
+                        </div>
+
+
+                        <button class="see-all">
+
+                            Ver todos
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="device-cards">
+
+
+                        <article class="device-card">
+
+                            <div class="device-card-icon computer">
+
+                                <i class="fa-solid fa-laptop"></i>
+
+                            </div>
+
+                            <div class="device-card-content">
+
+                                <strong>Meu computador</strong>
+
+                                <span>428 arquivos</span>
+
+                                <div class="storage">
+
+                                    <div class="storage-bar">
+                                        <span style="width: 62%;"></span>
+                                    </div>
+
+                                    <small>62% utilizado</small>
+
+                                </div>
+
+                            </div>
+
+                            <span class="online">
+                                Online
+                            </span>
+
+                        </article>
+
+
+                        <article class="device-card">
+
+                            <div class="device-card-icon phone">
+
+                                <i class="fa-solid fa-mobile-screen"></i>
+
+                            </div>
+
+                            <div class="device-card-content">
+
+                                <strong>Meu celular</strong>
+
+                                <span>183 arquivos</span>
+
+                                <div class="storage">
+
+                                    <div class="storage-bar">
+                                        <span style="width: 38%;"></span>
+                                    </div>
+
+                                    <small>38% utilizado</small>
+
+                                </div>
+
+                            </div>
+
+                            <span class="online">
+                                Online
+                            </span>
+
+                        </article>
+
+
+                        <article class="device-card">
+
+                            <div class="device-card-icon cloud">
+
+                                <i class="fa-solid fa-cloud"></i>
+
+                            </div>
+
+                            <div class="device-card-content">
+
+                                <strong>Minha nuvem</strong>
+
+                                <span>1.204 arquivos</span>
+
+                                <div class="storage">
+
+                                    <div class="storage-bar">
+                                        <span style="width: 74%;"></span>
+                                    </div>
+
+                                    <small>74% utilizado</small>
+
+                                </div>
+
+                            </div>
+
+                            <span class="online">
+                                Sincronizado
+                            </span>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ARQUIVOS RECENTES -->
+
+                <section class="section">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <span class="section-label">
+                                RECENTE
+                            </span>
+
+                            <h2>
+                                Arquivos acessados recentemente
+                            </h2>
+
+                        </div>
+
+
+                        <a
+                            href="../MeusArquivos/MeusArquivos.html"
+                            class="see-all"
+                        >
+
+                            Ver todos
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="recent-files">
+
+
+                        <article class="recent-file">
+
+                            <div class="recent-file-icon pdf">
+
+                                <i class="fa-solid fa-file-pdf"></i>
+
+                            </div>
+
+                            <div class="recent-file-info">
+
+                                <strong>
+                                    Resumo_Banco_de_Dados.pdf
+                                </strong>
+
+                                <span>
+                                    Faculdade · Hoje, 10:32
+                                </span>
+
+                            </div>
+
+                            <span class="recent-size">
+                                2,4 MB
+                            </span>
+
+                        </article>
+
+
+                        <article class="recent-file">
+
+                            <div class="recent-file-icon word">
+
+                                <i class="fa-solid fa-file-word"></i>
+
+                            </div>
+
+                            <div class="recent-file-info">
+
+                                <strong>
+                                    Projeto_Explorer.docx
+                                </strong>
+
+                                <span>
+                                    Projetos · Hoje, 09:15
+                                </span>
+
+                            </div>
+
+                            <span class="recent-size">
+                                1,8 MB
+                            </span>
+
+                        </article>
+
+
+                        <article class="recent-file">
+
+                            <div class="recent-file-icon image">
+
+                                <i class="fa-solid fa-file-image"></i>
+
+                            </div>
+
+                            <div class="recent-file-info">
+
+                                <strong>
+                                    Interface_Explorer.png
+                                </strong>
+
+                                <span>
+                                    Imagens · Ontem, 18:42
+                                </span>
+
+                            </div>
+
+                            <span class="recent-size">
+                                3,2 MB
+                            </span>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+                <!-- SUGESTÃO DA IA -->
+
+                <section class="ai-suggestion">
+
+                    <div class="ai-suggestion-icon">
+
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                    </div>
+
+
+                    <div class="ai-suggestion-content">
+
+                        <span>
+                            ASSISTENTE NOVA
+                        </span>
+
+                        <strong>
+                            Encontrei algo que pode ajudar.
+                        </strong>
+
+                        <p>
+                            Existem 5 arquivos duplicados ocupando espaço
+                            no seu computador.
+                        </p>
+
+                    </div>
+
+
+                    <button class="ai-action">
+
+                        Ver arquivos
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </section>
+
+            </div>
+
+
+            <!-- ASSISTENTE FLUTUANTE -->
+
+            <div class="assistant">
+
+                <div class="assistant-message">
+
+                    <strong>Olá!</strong>
+
+                    <span>
+                        Posso ajudar a encontrar ou organizar seus arquivos.
+                    </span>
+
+                </div>
+
+
+                <div class="assistant-avatar">
+
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
