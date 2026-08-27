@@ -1108,6 +1108,104 @@
 </div>
 
 
+  <!-- =====================================================
+         MASCOTE INTERATIVO - NOVI
+    ====================================================== -->
+    <section class="novi-assistant" id="noviAssistant" aria-label="Assistente Novi">
+
+        <!-- Balão aparece somente durante as interações -->
+        <div class="novi-speech" id="noviSpeech" role="status" aria-live="polite">
+            <button class="novi-close" id="noviClose" aria-label="Fechar mensagem">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <strong id="noviTitle">Novi</strong>
+            <p id="noviMessage"></p>
+        </div>
+
+        <!-- Menu com várias ações -->
+        <div class="novi-menu" id="noviMenu" aria-hidden="true">
+            <div class="novi-menu-title">
+                <span>🐾</span>
+                <div>
+                    <strong>O que vamos fazer?</strong>
+                    <small>Escolha uma interação</small>
+                </div>
+            </div>
+
+            <button class="novi-option" data-action="search">
+                <span class="novi-option-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+                <span><strong>Pesquisar</strong><small>Encontrar um arquivo</small></span>
+            </button>
+
+            <button class="novi-option" data-action="tip">
+                <span class="novi-option-icon"><i class="fa-regular fa-lightbulb"></i></span>
+                <span><strong>Dica de pesquisa</strong><small>Aprender um jeito mais rápido</small></span>
+            </button>
+
+            <button class="novi-option" data-action="suggestion">
+                <span class="novi-option-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                <span><strong>Dar uma sugestão</strong><small>Ver uma pesquisa pronta</small></span>
+            </button>
+
+            <button class="novi-option" data-action="files">
+                <span class="novi-option-icon"><i class="fa-regular fa-folder"></i></span>
+                <span><strong>Meus arquivos</strong><small>Acessar seus documentos</small></span>
+            </button>
+
+            <button class="novi-option" data-action="tags">
+                <span class="novi-option-icon"><i class="fa-solid fa-tags"></i></span>
+                <span><strong>Tags</strong><small>Organizar e filtrar</small></span>
+            </button>
+
+            <button class="novi-option" data-action="shortcut">
+                <span class="novi-option-icon"><i class="fa-solid fa-keyboard"></i></span>
+                <span><strong>Atalho rápido</strong><small>Usar Ctrl + K para pesquisar</small></span>
+            </button>
+
+            <button class="novi-option" data-action="mood">
+                <span class="novi-option-icon"><i class="fa-regular fa-face-smile"></i></span>
+                <span><strong>Mudar meu humor</strong><small>Veja o Novi reagir</small></span>
+            </button>
+
+            <button class="novi-option" data-action="surprise">
+                <span class="novi-option-icon"><i class="fa-solid fa-gift"></i></span>
+                <span><strong>Surpresa</strong><small>Descubra uma reação</small></span>
+            </button>
+        </div>
+
+        <!-- Gato em SVG -->
+        <button class="novi-character" id="noviCharacter" aria-label="Abrir opções do Novi" aria-expanded="false">
+            <svg class="novi-svg" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <ellipse cx="90" cy="164" rx="48" ry="7" fill="#d8d7ec" opacity=".65"/>
+                <path class="novi-tail-svg" d="M128 128 C160 128 164 96 145 90 C132 86 126 101 140 104" fill="none" stroke="#6354d8" stroke-width="12" stroke-linecap="round"/>
+                <ellipse cx="90" cy="119" rx="43" ry="45" fill="#fff" stroke="#6354d8" stroke-width="5"/>
+                <ellipse cx="90" cy="130" rx="26" ry="28" fill="#f0efff"/>
+                <path d="M51 59 L47 25 L76 48 Z" fill="#fff" stroke="#6354d8" stroke-width="5" stroke-linejoin="round"/>
+                <path d="M129 59 L133 25 L104 48 Z" fill="#fff" stroke="#6354d8" stroke-width="5" stroke-linejoin="round"/>
+                <path d="M55 47 L53 35 L67 48 Z" fill="#d8d5ff"/>
+                <path d="M125 47 L127 35 L113 48 Z" fill="#d8d5ff"/>
+                <circle cx="90" cy="72" r="43" fill="#fff" stroke="#6354d8" stroke-width="5"/>
+                <g class="novi-eyes-svg">
+                    <ellipse cx="73" cy="70" rx="6" ry="8" fill="#292a38"/>
+                    <ellipse cx="107" cy="70" rx="6" ry="8" fill="#292a38"/>
+                    <circle cx="75" cy="67" r="2" fill="#fff"/>
+                    <circle cx="109" cy="67" r="2" fill="#fff"/>
+                </g>
+                <path d="M86 81 Q90 77 94 81 Q90 87 86 81" fill="#d878b0"/>
+                <path class="novi-mouth-svg" d="M90 85 C84 92 79 88 77 86 M90 85 C96 92 101 88 103 86" fill="none" stroke="#292a38" stroke-width="2.5" stroke-linecap="round"/>
+                <g stroke="#707382" stroke-width="2" stroke-linecap="round">
+                    <path d="M60 81 L35 76"/><path d="M60 87 L33 88"/><path d="M61 93 L37 101"/>
+                    <path d="M120 81 L145 76"/><path d="M120 87 L147 88"/><path d="M119 93 L143 101"/>
+                </g>
+                <ellipse cx="66" cy="149" rx="11" ry="15" fill="#fff" stroke="#6354d8" stroke-width="4"/>
+                <ellipse cx="114" cy="149" rx="11" ry="15" fill="#fff" stroke="#6354d8" stroke-width="4"/>
+                <path class="novi-heart-svg" d="M90 109 C83 100 70 109 90 123 C110 109 97 100 90 109" fill="#7775e9"/>
+            </svg>
+            <span class="novi-notification" id="noviNotification">!</span>
+        </button>
+
+    </section>
+
 <script src="Galeria.js"></script>
 
 </body>

@@ -1369,3 +1369,260 @@ select {
         align-items: center;
     }
 }
+
+
+
+/* =========================================================
+   MASCOTE INTERATIVO - NOVI
+   Sem barra fixa abaixo do mascote
+========================================================= */
+
+.novi-assistant {
+    position: fixed;
+    right: 26px;
+    bottom: 22px;
+    z-index: 9999;
+    width: 330px;
+    height: 260px;
+    pointer-events: none;
+}
+
+.novi-character {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 130px;
+    height: 130px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    pointer-events: auto;
+    filter: drop-shadow(0 12px 18px rgba(72, 58, 150, .20));
+    animation: noviFloat 3.2s ease-in-out infinite;
+    transition: transform .2s ease, filter .2s ease;
+}
+
+.novi-character:hover {
+    transform: scale(1.08) translateY(-5px);
+    filter: drop-shadow(0 16px 25px rgba(72, 58, 150, .28));
+}
+
+.novi-character:active { transform: scale(.96); }
+
+.novi-svg { width: 100%; height: 100%; overflow: visible; }
+
+.novi-tail-svg { transform-origin: 140px 105px; }
+
+.novi-notification {
+    position: absolute;
+    top: 2px;
+    right: 3px;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: #6354d8;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 800;
+    box-shadow: 0 4px 12px rgba(70, 55, 150, .22);
+    transition: .2s ease;
+}
+
+.novi-assistant.open .novi-notification { transform: scale(0); }
+
+/* Balão: escondido normalmente; aparece só quando o Novi fala. */
+.novi-speech {
+    position: absolute;
+    right: 78px;
+    bottom: 138px;
+    width: 255px;
+    padding: 14px 38px 14px 16px;
+    background: #fff;
+    border: 1px solid #e1dff2;
+    border-radius: 17px;
+    box-shadow: 0 14px 35px rgba(57, 47, 125, .14);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px) scale(.96);
+    transform-origin: bottom right;
+    transition: .22s ease;
+    pointer-events: none;
+}
+
+.novi-speech.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.novi-speech::after {
+    content: "";
+    position: absolute;
+    right: 27px;
+    bottom: -8px;
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border-right: 1px solid #e1dff2;
+    border-bottom: 1px solid #e1dff2;
+    transform: rotate(45deg);
+}
+
+.novi-speech strong {
+    display: block;
+    color: #5b50cf;
+    font-size: 11px;
+}
+
+.novi-speech p {
+    margin: 4px 0 0;
+    color: #555666;
+    font-size: 11px;
+    line-height: 1.45;
+}
+
+.novi-close {
+    position: absolute;
+    top: 7px;
+    right: 8px;
+    width: 22px;
+    height: 22px;
+    border: 0;
+    border-radius: 50%;
+    background: #f3f2fb;
+    color: #77788b;
+    cursor: pointer;
+}
+
+.novi-close:hover { background: #e9e7fa; color: #5b50cf; }
+
+/* Menu flutuante */
+.novi-menu {
+    position: absolute;
+    right: 82px;
+    bottom: 135px;
+    width: 285px;
+    max-height: 430px;
+    overflow-y: auto;
+    padding: 9px;
+    background: #fff;
+    border: 1px solid #e2e0f2;
+    border-radius: 18px;
+    box-shadow: 0 18px 45px rgba(57, 47, 125, .17);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px) scale(.94);
+    transform-origin: bottom right;
+    transition: .22s ease;
+    pointer-events: none;
+}
+
+.novi-menu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+.novi-menu-title {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 8px 9px 10px;
+    border-bottom: 1px solid #f0eff7;
+    margin-bottom: 4px;
+}
+
+.novi-menu-title > span { font-size: 22px; }
+.novi-menu-title div { display: flex; flex-direction: column; }
+.novi-menu-title strong { color: #2e2f3b; font-size: 11px; }
+.novi-menu-title small { margin-top: 2px; color: #9293a3; font-size: 9px; }
+
+.novi-option {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px;
+    border: 0;
+    border-radius: 11px;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+    transition: background .18s ease, transform .18s ease;
+}
+
+.novi-option:hover { background: #f5f3ff; transform: translateX(3px); }
+
+.novi-option-icon {
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6255d6;
+    background: #f0eeff;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+.novi-option > span:last-child { display: flex; flex-direction: column; }
+.novi-option strong { color: #333441; font-size: 10px; }
+.novi-option small { margin-top: 3px; color: #9293a3; font-size: 8.5px; }
+
+@keyframes noviFloat {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-7px) rotate(-1deg); }
+}
+
+@keyframes noviHappy {
+    0% { transform: scale(1) rotate(0); }
+    25% { transform: scale(1.08) rotate(-6deg); }
+    50% { transform: scale(1.08) rotate(6deg); }
+    75% { transform: scale(1.04) rotate(-3deg); }
+    100% { transform: scale(1) rotate(0); }
+}
+
+@keyframes noviWave {
+    0%, 100% { transform: rotate(0); }
+    50% { transform: rotate(7deg) translateY(-7px); }
+}
+
+@keyframes noviJump {
+    0%, 100% { transform: translateY(0); }
+    35% { transform: translateY(-24px) rotate(-4deg); }
+    70% { transform: translateY(-8px) rotate(4deg); }
+}
+
+@keyframes noviSpin {
+    0% { transform: rotate(0) scale(1); }
+    50% { transform: rotate(180deg) scale(1.08); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+.novi-character.happy { animation: noviHappy .75s ease; }
+.novi-character.wave { animation: noviWave .65s ease 2; }
+.novi-character.jump { animation: noviJump .8s ease; }
+.novi-character.spin { animation: noviSpin .8s ease; }
+
+.novi-character.happy .novi-eyes-svg ellipse { transform: scaleY(.28); transform-origin: center; }
+.novi-character.surprise .novi-eyes-svg ellipse { transform: scale(1.25); transform-origin: center; }
+.novi-character.surprise .novi-mouth-svg { transform: scale(1.2); transform-origin: 90px 85px; }
+.novi-character.excited .novi-heart-svg { animation: noviHeart .45s ease-in-out 3; }
+
+@keyframes noviHeart {
+    50% { transform: scale(1.35); }
+}
+
+@media (max-width: 600px) {
+    .novi-assistant { right: 12px; bottom: 12px; width: 300px; }
+    .novi-character { width: 110px; height: 110px; }
+    .novi-menu { right: 65px; bottom: 112px; width: min(285px, calc(100vw - 30px)); }
+    .novi-speech { right: 60px; bottom: 115px; width: min(255px, calc(100vw - 80px)); }
+}
