@@ -2,8 +2,8 @@
 
 Este projeto contém duas versões da aplicação **Nova Explorer**:
 
-* **Nova-explorer** → versão inicial/protótipo desenvolvida com HTML, SCSS e JavaScript.
-* **New-explorer** → versão atual da aplicação desenvolvida utilizando Angular.
+- **Nova-explorer** → versão inicial/protótipo desenvolvida com HTML, SCSS e JavaScript.
+- **New-explorer** → versão atual da aplicação desenvolvida utilizando Angular.
 
 ---
 
@@ -27,9 +27,9 @@ A pasta **Nova-explorer** contém o modelo inicial da aplicação.
 
 Essa versão foi desenvolvida utilizando:
 
-* HTML
-* SCSS
-* JavaScript
+- HTML
+- SCSS
+- JavaScript
 
 Ela serve como **modelo visual e referência** para a implementação atual da aplicação.
 
@@ -41,10 +41,10 @@ A pasta **New-explorer** contém a versão atual da aplicação, desenvolvida ut
 
 ### Tecnologias utilizadas
 
-* Angular
-* TypeScript
-* HTML
-* SCSS
+- Angular
+- TypeScript
+- HTML
+- SCSS
 
 Essa é a versão que deve ser utilizada para **executar e continuar o desenvolvimento da aplicação**.
 
