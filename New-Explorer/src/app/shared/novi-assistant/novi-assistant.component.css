@@ -1,10 +1,10 @@
 :host { display: block; }
 
 .novi-assistant { position: fixed; right: 26px; bottom: 22px; z-index: 9999; width: 330px; height: 260px; pointer-events: none; }
-.novi-character { position: absolute; right: 0; bottom: 0; width: 130px; height: 130px; padding: 0; border: 0; background: transparent; cursor: pointer; pointer-events: auto; filter: drop-shadow(0 12px 18px rgba(72,58,150,.2)); animation: novi-float 3.2s ease-in-out infinite; transition: transform .2s ease, filter .2s ease; }
+.novi-character { position: absolute; right: 0; bottom: 0; width: 130px; height: 130px; padding: 0; border: 0; background: transparent; cursor: pointer; pointer-events: auto; filter: drop-shadow(0 12px 18px rgba(72,58,150,.2)); transition: transform .2s ease, filter .2s ease; }
 .novi-character:hover { transform: scale(1.08) translateY(-5px); filter: drop-shadow(0 16px 25px rgba(72,58,150,.28)); }
 .novi-character:active { transform: scale(.96); }
-.novi-svg { width: 100%; height: 100%; overflow: visible; }
+.novi-svg { width: 100%; height: 100%; overflow: visible; }.novi-character > .novi-svg { animation: novi-float 3.2s ease-in-out infinite; }
 .novi-tail-svg { transform-origin: 140px 105px; }
 .novi-notification { position: absolute; top: 2px; right: 3px; width: 25px; height: 25px; display: flex; align-items: center; justify-content: center; color: #fff; background: #6354d8; border: 3px solid #fff; border-radius: 50%; font-size: 12px; font-weight: 800; box-shadow: 0 4px 12px rgba(70,55,150,.22); transition: .2s ease; }
 .novi-assistant.open .novi-notification { transform: scale(0); }

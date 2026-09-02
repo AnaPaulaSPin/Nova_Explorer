@@ -1,0 +1,29 @@
+<article
+  class="file-item"
+  [class.list-view]="listView()"
+  [class.selected]="selected()"
+  (dblclick)="openFile.emit()"
+>
+  <input class="file-select" type="checkbox" [checked]="selected()" (change)="selectFile.emit()" [attr.aria-label]="'Selecionar ' + file().name">
+  <div class="file-name">
+    <div class="file-icon {{ file().color }}"><i [class]="file().icon"></i></div>
+    <div class="file-details"><strong>{{ file().name }}</strong><span>{{ file().type }}</span></div>
+  </div>
+  <span class="file-location">{{ displayLocation() || file().location }}</span>
+  <span class="file-date">{{ file().modifiedAt }}</span>
+  <span class="file-size">{{ file().size }}</span>
+  <span class="favorite-indicator" [class.visible]="file().favorite" aria-label="Arquivo favorito"><i class="fa-solid fa-star"></i></span>
+  <div class="file-actions">
+    <button class="file-more" type="button" aria-label="Mais opções do arquivo" (click)="toggleMenu($event)"><i class="fa-solid fa-ellipsis"></i></button>
+    @if (menuOpen) {
+      <div class="file-menu">
+        <button type="button" (click)="openFile.emit(); closeMenu()"><i class="fa-regular fa-folder-open"></i> Abrir</button>
+        <button type="button" (click)="renameFile.emit(); closeMenu()"><i class="fa-solid fa-pen"></i> Renomear</button>
+        <button type="button" (click)="toggleFavorite.emit(); closeMenu()"><i class="fa-solid fa-star"></i> {{ file().favorite ? 'Desfavoritar' : 'Favoritar' }}</button>
+        <button type="button" (click)="moveFile.emit(); closeMenu()"><i class="fa-solid fa-folder-tree"></i> Mover</button>
+        <button type="button" (click)="showInfo.emit(); closeMenu()"><i class="fa-solid fa-circle-info"></i> Informações</button>
+        <button class="danger" type="button" (click)="deleteFile.emit(); closeMenu()"><i class="fa-regular fa-trash-can"></i> Excluir</button>
+      </div>
+    }
+  </div>
+</article>

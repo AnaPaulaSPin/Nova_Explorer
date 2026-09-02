@@ -1,0 +1,6 @@
+<article class="folder-card" [class.selected]="selected()" (dblclick)="openFolder.emit()">
+  <input class="folder-select" type="checkbox" [checked]="selected()" (change)="select($event)" [attr.aria-label]="'Selecionar pasta ' + folder().name">
+  <div class="folder-icon {{ folder().color }}"><i class="fa-solid fa-folder"></i></div>
+  <div class="folder-info"><strong>{{ folder().name }}</strong><span>{{ fileCount() }} arquivos @if (folderCount()) { • {{ folderCount() }} pastas }</span></div>
+  <button class="file-more" type="button" aria-label="Renomear pasta" (click)="$event.stopPropagation(); renameFolder.emit()"><i class="fa-solid fa-ellipsis"></i></button>
+</article>
