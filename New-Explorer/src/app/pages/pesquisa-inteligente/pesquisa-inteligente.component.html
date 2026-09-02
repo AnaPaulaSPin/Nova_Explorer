@@ -1,0 +1,276 @@
+<app-page-shell title="Pesquisa Inteligente">
+
+  <section class="smart-search">
+
+    <header class="smart-search__header">
+      <span class="smart-search__eyebrow">NOVA AI</span>
+
+      <h2>Pesquisa inteligente</h2>
+
+      <p>
+        Encontre seus arquivos usando uma descrição simples,
+        como se estivesse conversando.
+      </p>
+    </header>
+
+    <section class="search-card">
+
+      <div class="search-card__icon">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+      </div>
+
+      <div class="search-card__content">
+
+        <label for="smartSearchInput">
+          O QUE VOCÊ ESTÁ PROCURANDO?
+        </label>
+
+        <form
+          class="search-form"
+          (submit)="realizarPesquisa($event)"
+        >
+          <input
+            id="smartSearchInput"
+            name="search"
+            type="text"
+            placeholder="Ex.: encontre os arquivos da faculdade modificados esta semana..."
+            autocomplete="off"
+            [(ngModel)]="query"
+          />
+
+          <button
+            type="submit"
+            aria-label="Pesquisar"
+          >
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </form>
+
+        <p class="search-card__hint">
+          Você pode pesquisar por nome, tipo, data, localização
+          ou conteúdo.
+        </p>
+
+      </div>
+
+    </section>
+
+    <section class="suggestions">
+
+      <div class="section-heading">
+        <div>
+          <span class="section-heading__eyebrow">
+            EXPERIMENTE
+          </span>
+
+          <h3>Comece por uma sugestão</h3>
+        </div>
+      </div>
+
+      <div class="suggestions__grid">
+
+        <button
+          type="button"
+          class="suggestion-card"
+          (click)="selecionarSugestao('Encontre meus arquivos da faculdade')"
+        >
+          <span class="suggestion-card__icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </span>
+
+          <span class="suggestion-card__content">
+            <strong>Arquivos da faculdade</strong>
+
+            <small>
+              Encontre documentos relacionados aos estudos
+            </small>
+          </span>
+
+          <i class="fa-solid fa-arrow-right suggestion-card__arrow"></i>
+        </button>
+
+        <button
+          type="button"
+          class="suggestion-card"
+          (click)="selecionarSugestao('Mostre os arquivos modificados recentemente')"
+        >
+          <span class="suggestion-card__icon">
+            <i class="fa-regular fa-clock"></i>
+          </span>
+
+          <span class="suggestion-card__content">
+            <strong>Arquivos recentes</strong>
+
+            <small>
+              Veja o que foi modificado recentemente
+            </small>
+          </span>
+
+          <i class="fa-solid fa-arrow-right suggestion-card__arrow"></i>
+        </button>
+
+        <button
+          type="button"
+          class="suggestion-card"
+          (click)="selecionarSugestao('Encontre minhas imagens')"
+        >
+          <span class="suggestion-card__icon">
+            <i class="fa-regular fa-image"></i>
+          </span>
+
+          <span class="suggestion-card__content">
+            <strong>Minhas imagens</strong>
+
+            <small>
+              Encontre fotos e imagens armazenadas
+            </small>
+          </span>
+
+          <i class="fa-solid fa-arrow-right suggestion-card__arrow"></i>
+        </button>
+
+      </div>
+
+    </section>
+
+    <section class="results">
+
+      <div class="results__header">
+
+        <div>
+          <span class="section-heading__eyebrow">
+            RESULTADOS
+          </span>
+
+          <h3>
+            {{ pesquisaRealizada
+              ? 'Resultados encontrados'
+              : 'Encontre o que precisa' }}
+          </h3>
+        </div>
+
+        <div class="results__actions">
+
+          <button
+            type="button"
+            class="filter-button"
+          >
+            <i class="fa-solid fa-sliders"></i>
+            Filtros
+          </button>
+
+          <button
+            type="button"
+            class="filter-button"
+          >
+            <i class="fa-solid fa-arrow-down-wide-short"></i>
+            Relevância
+          </button>
+
+        </div>
+
+      </div>
+
+      @if (!pesquisaRealizada) {
+
+        <div class="empty-results">
+
+          <div class="empty-results__icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+
+          <h4>
+            A pesquisa inteligente está pronta.
+          </h4>
+
+          <p>
+            Digite uma frase acima para encontrar arquivos
+            de forma mais natural.
+          </p>
+
+        </div>
+
+      }
+
+      @if (pesquisaRealizada) {
+
+        <div class="results-list">
+
+          @for (resultado of resultadosFiltrados; track resultado.nome) {
+
+            <article class="result-card">
+
+              <div
+                class="result-card__icon"
+                [class]="resultado.classeIcone"
+              >
+                <i [class]="resultado.icone"></i>
+              </div>
+
+              <div class="result-card__content">
+
+                <h4>
+                  {{ resultado.nome }}
+                </h4>
+
+                <span>
+                  {{ resultado.local }}
+                  ·
+                  {{ resultado.tipo }}
+                  ·
+                  {{ resultado.tamanho }}
+                </span>
+
+                <p>
+                  {{ resultado.descricao }}
+                </p>
+
+              </div>
+
+              <div class="result-card__relevance">
+
+                <strong>
+                  {{ resultado.relevancia }}%
+                </strong>
+
+                <small>
+                  relevância
+                </small>
+
+              </div>
+
+            </article>
+
+          }
+
+        </div>
+
+      }
+
+    </section>
+
+    <section class="how-it-works">
+
+      <div class="how-it-works__icon">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+      </div>
+
+      <div class="how-it-works__content">
+
+        <span>COMO FUNCIONA</span>
+
+        <h3>Pesquise do seu jeito.</h3>
+
+        <p>
+          A Nova entende o contexto da sua pesquisa e pode
+          combinar informações como nome, tipo, data, pasta
+          e conteúdo dos arquivos.
+        </p>
+
+      </div>
+
+    </section>
+
+  </section>
+
+</app-page-shell>
