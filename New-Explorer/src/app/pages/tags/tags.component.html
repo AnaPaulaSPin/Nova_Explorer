@@ -1,0 +1,483 @@
+<app-page-shell title="Tags">
+
+    <section class="page">
+
+        <!-- =====================================================
+             CABEÇALHO
+        ====================================================== -->
+
+        <section class="page-header">
+
+            <div class="header-text">
+
+                <span class="section-label">
+                    ORGANIZAÇÃO
+                </span>
+
+                <h1>
+                    Tags
+                </h1>
+
+                <p>
+                    Organize seus arquivos por categorias e
+                    encontre tudo com mais facilidade.
+                </p>
+
+            </div>
+
+
+            <button
+                class="create-tag-button"
+                type="button"
+                (click)="abrirModal()"
+            >
+
+                <i class="fa-solid fa-plus"></i>
+
+                Nova tag
+
+            </button>
+
+        </section>
+
+
+        <!-- =====================================================
+             ASSISTENTE DE IA
+        ====================================================== -->
+<section class="suggestions">
+    <div class="suggestion-header">
+        <div class="suggestion-icon novi-icon">
+            <!-- Ícone do Novi -->
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+        </div>
+
+        <div>
+            <span>PEÇA AO NOVI</span>
+            <h2>Sugestões de tags</h2>
+        </div>
+    </div>
+
+    <p>
+        O Novi analisou seus arquivos e encontrou algumas tags que podem ser úteis.
+    </p>
+
+    <div class="suggested-tags">
+        @for (sugestao of sugestoes; track sugestao.nome) {
+            <button
+                type="button"
+                [class.applied]="sugestao.aplicada"
+                (click)="adicionarSugestao(sugestao)"
+            >
+                <i
+                    class="fa-solid"
+                    [class.fa-check]="sugestao.aplicada"
+                    [class.fa-tag]="!sugestao.aplicada"
+                ></i>
+
+                {{ sugestao.nome }}
+            </button>
+        }
+    </div>
+</section>
+
+
+        <!-- =====================================================
+             TAGS MAIS UTILIZADAS
+        ====================================================== -->
+
+        <section class="section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-label">
+                        SUAS TAGS
+                    </span>
+
+                    <h2>
+                        Tags mais utilizadas
+                    </h2>
+
+                </div>
+
+
+                <span class="tag-count">
+                    {{ tags.length }}
+                    {{ tags.length === 1 ? 'tag' : 'tags' }}
+                </span>
+
+            </div>
+
+
+            <div class="tags-grid">
+
+                @for (tag of tags; track tag.id) {
+
+                    <button
+                        class="tag-card"
+                        type="button"
+                    >
+
+                        <div class="tag-card-icon purple">
+
+                            <i class="fa-solid fa-tag"></i>
+
+                        </div>
+
+
+                        <div class="tag-card-info">
+
+                            <strong>
+                                {{ tag.nome }}
+                            </strong>
+
+                            <span>
+                                {{ tag.quantidadeArquivos }}
+                                {{
+                                    tag.quantidadeArquivos === 1
+                                        ? 'arquivo'
+                                        : 'arquivos'
+                                }}
+                            </span>
+
+                        </div>
+
+
+                        <i
+                            class="fa-solid fa-chevron-right tag-arrow"
+                        ></i>
+
+                    </button>
+
+                }
+
+
+                @if (tags.length === 0) {
+
+                    <div class="gallery-empty">
+
+                        <i class="fa-solid fa-tags"></i>
+
+                        <p>
+                            Nenhuma tag criada ainda.
+                        </p>
+
+                    </div>
+
+                }
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FILTROS
+        ====================================================== -->
+
+        <section class="section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-label">
+                        EXPLORAR
+                    </span>
+
+                    <h2>
+                        Todos os arquivos por tag
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="filter-bar">
+
+                <button
+                    class="filter"
+                    type="button"
+                    [class.active]="filtro === 'all'"
+                    (click)="selecionarFiltro('all')"
+                >
+                    Todas
+                </button>
+
+
+                <button
+                    class="filter"
+                    type="button"
+                    [class.active]="filtro === 'recent'"
+                    (click)="selecionarFiltro('recent')"
+                >
+                    Recentes
+                </button>
+
+
+                <button
+                    class="filter"
+                    type="button"
+                    [class.active]="filtro === 'most-used'"
+                    (click)="selecionarFiltro('most-used')"
+                >
+                    Mais utilizadas
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                 ARQUIVOS
+            ================================================== -->
+
+            <section class="section">
+
+    <div class="section-header">
+        <div>
+            <span class="section-label">ARQUIVOS</span>
+            <h2>Arquivos por tag</h2>
+        </div>
+
+        <span class="tag-count">
+            {{ arquivos.length }} arquivos
+        </span>
+    </div>
+
+    <div class="tag-files">
+
+        @for (arquivo of arquivos; track arquivo.id) {
+
+            <article class="file-row">
+
+                <!-- Ícone do arquivo -->
+                <div
+                    class="file-icon"
+                    [class]="arquivo.tipo"
+                >
+                    @switch (arquivo.tipo) {
+
+                        @case ('pdf') {
+                            <i class="fa-solid fa-file-pdf"></i>
+                        }
+
+                        @case ('image') {
+                            <i class="fa-solid fa-image"></i>
+                        }
+
+                        @case ('word') {
+                            <i class="fa-solid fa-file-word"></i>
+                        }
+
+                        @case ('video') {
+                            <i class="fa-solid fa-file-video"></i>
+                        }
+
+                    }
+                </div>
+
+
+                <!-- Informações do arquivo -->
+                <div class="file-info">
+
+                    <strong>
+                        {{ arquivo.nome }}
+                    </strong>
+
+                    <span>
+                        {{ arquivo.data }} · {{ arquivo.tamanho }}
+                    </span>
+
+                </div>
+
+
+                <!-- Tags associadas ao arquivo -->
+                <div class="file-tags">
+
+                    @for (tag of arquivo.tags; track tag.id) {
+
+                        <span
+                            class="mini-tag"
+                            [class]="tag.classeIcone"
+                        >
+                            <i
+                                class="fa-solid"
+                                [class]="tag.icone"
+                            ></i>
+
+                            {{ tag.nome }}
+                        </span>
+
+                    }
+
+                </div>
+
+            </article>
+
+        }
+
+    </div>
+
+</section>
+
+        </section>
+
+
+        <!-- =====================================================
+             TAGS SUGERIDAS PELA IA
+        ====================================================== -->
+
+        @if (sugestoesEncontradas) {
+
+            <section
+                class="suggestions"
+                id="suggestions"
+            >
+
+                <div class="suggestion-header">
+
+                    <div class="suggestion-icon">
+
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            NOVA IA
+                        </span>
+
+                        <h2>
+                            Sugestões de organização
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <p>
+                    Alguns arquivos podem ser organizados com estas tags:
+                </p>
+
+
+                <div class="suggested-tags">
+
+                    @for (
+                        sugestao of sugestoes;
+                        track sugestao.nome
+                    ) {
+
+                        <button
+                            type="button"
+                            (click)="adicionarSugestao(sugestao)"
+                            [disabled]="sugestao.aplicada"
+                        >
+
+                            @if (sugestao.aplicada) {
+
+                                <i class="fa-solid fa-check"></i>
+
+                            } @else {
+
+                                <i class="fa-solid fa-plus"></i>
+
+                            }
+
+                            {{ sugestao.nome }}
+
+                        </button>
+
+                    }
+
+                </div>
+
+            </section>
+
+        }
+
+    </section>
+
+
+    <!-- =========================================================
+         MODAL - NOVA TAG
+    ========================================================== -->
+
+    @if (tagModalAberto) {
+
+        <div
+            class="modal"
+            (click)="fecharModalAoClicarFora($event)"
+        >
+
+            <div class="modal-content">
+
+                <button
+                    class="modal-close"
+                    type="button"
+                    title="Fechar"
+                    (click)="fecharModal()"
+                >
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+
+                <div class="modal-icon">
+
+                    <i class="fa-solid fa-tag"></i>
+
+                </div>
+
+
+                <h2>
+                    Criar nova tag
+                </h2>
+
+
+                <p>
+                    Dê um nome para identificar seus arquivos.
+                </p>
+
+
+                <input
+                    type="text"
+                    [(ngModel)]="nomeNovaTag"
+                    placeholder="Ex.: Faculdade"
+                    (keyup.enter)="criarTag()"
+                >
+
+
+                <div class="modal-actions">
+
+                    <button
+                        class="cancel-button"
+                        type="button"
+                        (click)="fecharModal()"
+                    >
+                        Cancelar
+                    </button>
+
+
+                    <button
+                        class="save-button"
+                        type="button"
+                        (click)="criarTag()"
+                    >
+                        Criar tag
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    }
+
+</app-page-shell>

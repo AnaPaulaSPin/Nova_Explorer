@@ -1,0 +1,1064 @@
+/* =========================================================
+   PÁGINA
+========================================================= */
+
+.page {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 42px 55px 110px;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
+.page-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.header-text {
+    max-width: 650px;
+}
+
+.section-label {
+    color: var(--text-muted);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
+.header-text h1 {
+    margin-top: 7px;
+    font-size: 34px;
+    letter-spacing: -0.8px;
+}
+
+.header-text p {
+    margin-top: 9px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.create-tag-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 12px 17px;
+
+    border: none;
+    border-radius: 10px;
+
+    color: white;
+    background: var(--primary);
+
+    cursor: pointer;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition:
+        background 0.2s,
+        transform 0.2s;
+}
+
+.create-tag-button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   PAINEL DE IA
+========================================================= */
+
+.ai-panel {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+
+    padding: 21px 23px;
+
+    background: linear-gradient(
+        105deg,
+        #f2f1ff,
+        #fafaff
+    );
+
+    border: 1px solid #e5e4f7;
+    border-radius: 18px;
+}
+
+.ai-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    color: #7663cf;
+    background: #e9e6ff;
+
+    border-radius: 13px;
+
+    font-size: 18px;
+}
+
+.ai-content {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.ai-label {
+    color: #9389bf;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.1em;
+}
+
+.ai-content h2 {
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+.ai-content p {
+    margin-top: 5px;
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.ai-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 11px 15px;
+
+    border: none;
+    border-radius: 9px;
+
+    color: var(--primary);
+    background: white;
+
+    cursor: pointer;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    box-shadow:
+        0 3px 10px rgba(40, 40, 80, 0.05);
+
+    transition:
+        color 0.2s,
+        background 0.2s,
+        transform 0.2s;
+}
+
+.ai-button:hover {
+    color: white;
+    background: var(--primary);
+    transform: translateY(-1px);
+}
+
+.ai-button:disabled {
+    cursor: wait;
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   SEÇÕES
+========================================================= */
+
+.section {
+    margin-top: 40px;
+}
+
+.section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    margin-bottom: 17px;
+}
+
+.section-header h2 {
+    margin-top: 6px;
+    font-size: 21px;
+}
+
+.tag-count {
+    color: var(--text-muted);
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   GRID DE TAGS
+========================================================= */
+
+.tags-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 13px;
+}
+
+.tag-card {
+    min-height: 88px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    padding: 17px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s,
+        border-color 0.2s;
+}
+
+.tag-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #dedff0;
+
+    box-shadow:
+        0 10px 25px rgba(30, 32, 60, 0.06);
+}
+
+.tag-card-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    margin-right: 12px;
+
+    border-radius: 11px;
+
+    font-size: 16px;
+}
+
+.tag-card-icon.purple {
+    color: #7065d5;
+    background: #efedff;
+}
+
+.tag-card-icon.blue {
+    color: #4d83d5;
+    background: #edf4ff;
+}
+
+.tag-card-icon.pink {
+    color: #d35d8e;
+    background: #fff0f5;
+}
+
+.tag-card-icon.green {
+    color: #4ba87a;
+    background: #ecfaf3;
+}
+
+.tag-card-icon.orange {
+    color: #d88a43;
+    background: #fff5e9;
+}
+
+.tag-card-icon.cyan {
+    color: #4b9cc8;
+    background: #eaf8ff;
+}
+
+.tag-card-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.tag-card-info strong {
+    font-size: 14px;
+}
+
+.tag-card-info span {
+    margin-top: 5px;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+}
+
+.tag-arrow {
+    position: absolute;
+    right: 14px;
+
+    color: #c2c3cc;
+
+    font-size: 10px;
+
+    transition:
+        color 0.2s,
+        transform 0.2s;
+}
+
+.tag-card:hover .tag-arrow {
+    color: var(--primary);
+    transform: translateX(2px);
+}
+
+
+/* =========================================================
+   FILTROS
+========================================================= */
+
+.filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    margin-bottom: 13px;
+}
+
+.filter {
+    padding: 9px 14px;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    color: var(--text-secondary);
+    background: white;
+
+    cursor: pointer;
+
+    font-size: 11px;
+
+    transition:
+        border-color 0.2s,
+        color 0.2s,
+        background 0.2s;
+}
+
+.filter:hover {
+    border-color: #cfcfe8;
+    color: var(--primary);
+}
+
+.filter.active {
+    color: var(--primary);
+    background: var(--primary-light);
+
+    border-color: #dedeff;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   ARQUIVOS
+========================================================= */
+
+.tag-files {
+    overflow: hidden;
+
+    background: white;
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    box-shadow:
+        0 4px 18px rgba(30, 32, 60, 0.025);
+}
+
+.file-row {
+    min-height: 72px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 12px 17px;
+
+    border-bottom: 1px solid #f0f1f4;
+
+    transition:
+        background 0.2s,
+        transform 0.2s;
+}
+
+.file-row:last-child {
+    border-bottom: none;
+}
+
+.file-row:hover {
+    background: #fafaff;
+}
+
+
+/* =========================================================
+   ÍCONE DO ARQUIVO
+========================================================= */
+
+.file-icon {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    margin-right: 13px;
+
+    border-radius: 11px;
+
+    font-size: 16px;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+.file-row:hover .file-icon {
+    transform: scale(1.04);
+}
+
+.file-icon.pdf {
+    color: #e25b63;
+    background: #fff0f1;
+}
+
+.file-icon.image {
+    color: #765ac9;
+    background: #f1edff;
+}
+
+.file-icon.word {
+    color: #4d7fd4;
+    background: #edf4ff;
+}
+
+.file-icon.video {
+    color: #d25d8e;
+    background: #fff0f5;
+}
+
+
+/* =========================================================
+   INFORMAÇÕES DO ARQUIVO
+========================================================= */
+
+.file-info {
+    min-width: 180px;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.file-info strong {
+    overflow: hidden;
+
+    color: var(--text);
+
+    font-size: 13px;
+    font-weight: 600;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.file-info span {
+    margin-top: 4px;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   TAGS DO ARQUIVO
+========================================================= */
+
+.file-tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+
+    margin: 0 20px;
+}
+
+.mini-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    padding: 5px 8px;
+
+    border-radius: 7px;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition:
+        transform 0.2s,
+        opacity 0.2s;
+}
+
+.mini-tag:hover {
+    transform: translateY(-1px);
+}
+
+
+/* Cores das tags nos arquivos */
+
+.mini-tag.purple {
+    color: #7065d5;
+    background: #efedff;
+}
+
+.mini-tag.blue {
+    color: #4d83d5;
+    background: #edf4ff;
+}
+
+.mini-tag.pink {
+    color: #d35d8e;
+    background: #fff0f5;
+}
+
+.mini-tag.green {
+    color: #4ba87a;
+    background: #ecfaf3;
+}
+
+.mini-tag.orange {
+    color: #d88a43;
+    background: #fff5e9;
+}
+
+.mini-tag.cyan {
+    color: #4b9cc8;
+    background: #eaf8ff;
+}
+
+.mini-tag i {
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   TAMANHO DO ARQUIVO
+========================================================= */
+
+.file-size {
+    width: 65px;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   ESTADO VAZIO
+========================================================= */
+
+.empty-state {
+    padding: 35px 20px;
+
+    color: var(--text-muted);
+
+    text-align: center;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   SUGESTÕES DO NOVI
+========================================================= */
+
+.suggestions {
+    margin-top: 35px;
+
+    padding: 26px 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #faf9ff 0%,
+            #ffffff 55%,
+            #f8f7ff 100%
+        );
+
+    border: 1px solid #e3e0f7;
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 25px rgba(80, 70, 150, 0.05);
+}
+
+
+/* =========================================================
+   CABEÇALHO DO NOVI
+========================================================= */
+
+.suggestion-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+/* =========================================================
+   ÍCONE DO NOVI
+========================================================= */
+
+.suggestion-icon.novi-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    color: #6354d8;
+
+    background:
+        linear-gradient(
+            145deg,
+            #eeebff,
+            #e4e0ff
+        );
+
+    border: 1px solid #ddd8ff;
+    border-radius: 15px;
+
+    font-size: 21px;
+
+    box-shadow:
+        0 5px 14px rgba(99, 84, 216, 0.12);
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+.suggestion-icon.novi-icon:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(99, 84, 216, 0.18);
+}
+
+
+/* =========================================================
+   TEXTO DO CABEÇALHO DO NOVI
+========================================================= */
+
+.suggestion-header > div:last-child {
+    display: flex;
+    flex-direction: column;
+}
+
+.suggestion-header span {
+    color: #7569c9;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+}
+
+.suggestion-header h2 {
+    margin-top: 5px;
+
+    color: var(--text);
+
+    font-size: 21px;
+    font-weight: 700;
+
+    letter-spacing: -0.3px;
+}
+
+
+/* =========================================================
+   DESCRIÇÃO DO NOVI
+========================================================= */
+
+.suggestions > p {
+    max-width: 700px;
+
+    margin-top: 17px;
+
+    color: var(--text-secondary);
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   TAGS SUGERIDAS
+========================================================= */
+
+.suggested-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+
+    margin-top: 17px;
+}
+
+.suggested-tags button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 9px 13px;
+
+    color: var(--primary);
+    background: var(--primary-light);
+
+    border: 1px solid #dedcff;
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition:
+        background 0.2s,
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+.suggested-tags button:hover {
+    background: #e7e5ff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(91, 92, 226, 0.08);
+}
+
+.suggested-tags button.applied {
+    color: #4ba87a;
+    background: #ecfaf3;
+    border-color: #d8f2e5;
+}
+
+.suggested-tags button.applied:hover {
+    background: #e4f7ed;
+}
+
+
+/* =========================================================
+   MODAL DE CRIAÇÃO DE TAG
+========================================================= */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(30, 32, 50, 0.35);
+
+    z-index: 500;
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 390px;
+
+    position: relative;
+
+    padding: 28px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 60px rgba(20, 22, 50, 0.18);
+
+    animation: modalAppear 0.2s ease;
+}
+
+@keyframes modalAppear {
+    from {
+        opacity: 0;
+        transform: translateY(8px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-close {
+    width: 30px;
+    height: 30px;
+
+    position: absolute;
+
+    top: 14px;
+    right: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 7px;
+
+    background: transparent;
+    color: var(--text-muted);
+
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    background: #f5f5f7;
+    color: var(--text);
+}
+
+.modal-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--primary);
+    background: var(--primary-light);
+
+    border-radius: 11px;
+
+    font-size: 16px;
+}
+
+.modal-content h2 {
+    margin-top: 16px;
+    font-size: 19px;
+}
+
+.modal-content > p {
+    margin-top: 6px;
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+}
+
+.modal-content input {
+    width: 100%;
+    height: 42px;
+
+    box-sizing: border-box;
+
+    margin-top: 18px;
+    padding: 0 12px;
+
+    border: 1px solid var(--border);
+    border-radius: 9px;
+
+    outline: none;
+
+    font-size: 12px;
+}
+
+.modal-content input:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px rgba(91, 92, 226, 0.08);
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+
+    margin-top: 18px;
+}
+
+.cancel-button,
+.save-button {
+    padding: 10px 14px;
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 11px;
+}
+
+.cancel-button {
+    color: var(--text-secondary);
+    background: #f4f4f7;
+}
+
+.cancel-button:hover {
+    background: #eaeaf0;
+}
+
+.save-button {
+    color: white;
+    background: var(--primary);
+}
+
+.save-button:hover {
+    background: var(--primary-dark);
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 1200px) {
+    .tags-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .file-tags {
+        margin-right: 12px;
+    }
+}
+
+@media (max-width: 950px) {
+    .ai-panel {
+        align-items: flex-start;
+    }
+
+    .file-tags {
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 680px) {
+    .page {
+        padding: 25px 18px 100px;
+    }
+
+    .page-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .tags-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ai-panel {
+        flex-direction: column;
+    }
+
+    .ai-button {
+        align-self: flex-start;
+    }
+
+    .filter-bar {
+        overflow-x: auto;
+        padding-bottom: 5px;
+    }
+
+    .file-row {
+        min-height: 66px;
+        padding: 10px 13px;
+    }
+
+    .file-icon {
+        width: 38px;
+        height: 38px;
+
+        margin-right: 10px;
+
+        font-size: 14px;
+    }
+
+    .file-info strong {
+        font-size: 12px;
+    }
+
+    .file-info span {
+        font-size: 10px;
+    }
+
+    .file-tags,
+    .file-size {
+        display: none;
+    }
+
+    .suggestions {
+        padding: 21px;
+    }
+
+    .suggestion-icon.novi-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 19px;
+    }
+
+    .suggestion-header span {
+        font-size: 10px;
+    }
+
+    .suggestion-header h2 {
+        font-size: 18px;
+    }
+
+    .suggestions > p {
+        font-size: 12px;
+    }
+}
