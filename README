@@ -1,0 +1,188 @@
+# Nova Explorer
+
+Este projeto contém duas versões da aplicação **Nova Explorer**:
+
+- **Nova-explorer** → versão inicial/protótipo desenvolvida apenas com HTML e SCSS.
+- **New-explorer** → versão atual da aplicação desenvolvida utilizando Angular.
+
+---
+
+## 📁 Estrutura do projeto
+
+```text
+Projeto/
+│
+├── Nova-explorer/
+│   └── Versão HTML + SCSS
+│
+└── New-explorer/
+    └── Projeto Angular
+```
+
+## 🎨 Nova-explorer
+
+A pasta **Nova-explorer** contém o modelo inicial da aplicação.
+
+Essa versão foi desenvolvida utilizando:
+
+- HTML
+- SCSS
+- JavaScript
+
+Ela serve como **modelo visual e de referência** para a aplicação.
+
+---
+
+## ⚙️ New-explorer
+
+A pasta **New-explorer** contém a versão atual da aplicação desenvolvida utilizando **Angular**.
+
+Tecnologias utilizadas:
+
+- Angular
+- TypeScript
+- HTML
+- SCSS
+
+Essa é a versão que deve ser utilizada para executar e continuar o desenvolvimento da aplicação.
+
+---
+
+# 🚀 Como executar a aplicação Angular
+
+## 1. Baixar o projeto
+
+Após baixar ou clonar o projeto, localize a pasta:
+
+```text
+New-explorer
+```
+
+> Os comandos do Angular devem ser executados dentro dessa pasta.
+
+---
+
+## 2. Abrir o terminal na pasta New-explorer
+
+Entre na pasta utilizando o terminal:
+
+```bash
+cd New-explorer
+```
+
+A pasta deve conter o arquivo:
+
+```text
+package.json
+```
+
+Esse arquivo contém as informações e dependências necessárias para o projeto Angular.
+
+---
+
+## 3. Instalar as dependências
+
+Depois de baixar o projeto, é necessário instalar as dependências.
+
+Execute:
+
+```bash
+npm install
+```
+
+Esse comando irá instalar todas as dependências definidas no arquivo `package.json`.
+
+Após a instalação, será criada a pasta:
+
+```text
+node_modules/
+```
+
+> A pasta `node_modules` não precisa ser enviada junto com o projeto, pois pode ser recriada utilizando `npm install`.
+
+---
+
+## 4. Executar a aplicação
+
+Depois que as dependências forem instaladas, execute:
+
+```bash
+ng serve -o
+```
+
+O comando irá iniciar o servidor de desenvolvimento do Angular.
+
+A opção `-o` faz com que a aplicação seja aberta automaticamente no navegador.
+
+---
+
+# 🔄 Executar o projeto novamente
+
+Depois que as dependências já tiverem sido instaladas, não é necessário executar `npm install` novamente.
+
+Basta entrar na pasta do projeto:
+
+```bash
+cd New-explorer
+```
+
+E executar:
+
+```bash
+ng serve -o
+```
+
+---
+
+# ⚠️ Possíveis problemas
+
+## Comando `ng` não reconhecido
+
+Caso o terminal informe que o comando `ng` não foi reconhecido, tente executar:
+
+```bash
+npx ng serve -o
+```
+
+---
+
+## Problemas com dependências
+
+Caso apareçam erros relacionados às dependências do projeto, execute:
+
+```bash
+npm install
+```
+
+Depois:
+
+```bash
+ng serve -o
+```
+
+---
+
+# 📌 Resumo
+
+### Primeira execução
+
+```bash
+cd New-explorer
+npm install
+ng serve -o
+```
+
+### Próximas execuções
+
+```bash
+cd New-explorer
+ng serve -o
+```
+
+---
+
+## 📝 Observação
+
+A pasta **Nova-explorer** representa o protótipo inicial da aplicação e deve ser utilizada como referência visual e estrutural.
+
+A pasta **New-explorer** representa a implementação atual em Angular e é a versão utilizada para execução e desenvolvimento da aplicação.
