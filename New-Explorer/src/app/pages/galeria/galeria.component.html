@@ -1,0 +1,404 @@
+<app-page-shell title="Galeria">
+
+    <section class="page">
+
+        <!-- =====================================================
+             CABEÇALHO
+        ====================================================== -->
+
+        <section class="gallery-header">
+
+            <div>
+                <span class="section-label">GALERIA</span>
+
+                <h1>Suas fotos e vídeos</h1>
+
+                <p>
+                    Encontre suas memórias de forma simples e organizada.
+                </p>
+            </div>
+
+            <button
+                class="view-button"
+                type="button"
+                title="Alterar visualização"
+            >
+                <i class="fa-solid fa-grip"></i>
+            </button>
+
+        </section>
+
+
+        <!-- =====================================================
+             PESQUISA
+        ====================================================== -->
+
+        <section class="gallery-search">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                placeholder="Pesquisar fotos, pessoas, lugares..."
+                [ngModel]="busca"
+                (ngModelChange)="busca = $event"
+            >
+
+            <button
+                class="search-filter"
+                type="button"
+                title="Filtros"
+            >
+                <i class="fa-solid fa-sliders"></i>
+            </button>
+
+        </section>
+
+
+        <!-- =====================================================
+             FILTROS
+        ====================================================== -->
+
+        <div class="gallery-filters">
+
+            @for (filtroItem of filtros; track filtroItem.valor) {
+
+                <button
+                    class="filter-button"
+                    type="button"
+                    [class.active]="filtro === filtroItem.valor"
+                    (click)="selecionarFiltro(filtroItem.valor)"
+                >
+
+                    @if (filtroItem.icone) {
+                        <i [class]="filtroItem.icone"></i>
+                    }
+
+                    {{ filtroItem.label }}
+
+                </button>
+
+            }
+
+        </div>
+
+
+        <!-- =====================================================
+             PESSOAS
+        ====================================================== -->
+
+        <section class="gallery-section">
+
+            <div class="gallery-section-header">
+
+                <div>
+                    <span class="section-label">
+                        RECONHECIMENTO
+                    </span>
+
+                    <h2>Pessoas</h2>
+                </div>
+
+                <button
+                    class="section-link"
+                    type="button"
+                >
+                    Ver todas
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+
+            <div class="people-list">
+
+                @for (pessoa of pessoasVisiveis; track pessoa.id) {
+
+                    <button
+                        class="person-card"
+                        type="button"
+                    >
+
+                        <div class="person-image">
+
+                            <img
+                                [src]="pessoa.foto"
+                                [alt]="pessoa.nome"
+                            >
+
+                        </div>
+
+                        <strong>
+                            {{ pessoa.nome }}
+                        </strong>
+
+                        <span>
+                            {{ pessoa.totalFotos }}
+                            {{ pessoa.totalFotos === 1 ? 'foto' : 'fotos' }}
+                        </span>
+
+                    </button>
+
+                }
+
+
+                @if (pessoasRestantes > 0) {
+
+                    <button
+                        class="person-card"
+                        type="button"
+                    >
+
+                        <div class="person-more-icon">
+
+                            <i class="fa-solid fa-plus"></i>
+
+                        </div>
+
+                        <strong>
+                            +{{ pessoasRestantes }} pessoas
+                        </strong>
+
+                    </button>
+
+                }
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ANIMAIS
+        ====================================================== -->
+
+        <section class="gallery-section">
+
+            <div class="gallery-section-header">
+
+                <div>
+                    <span class="section-label">
+                        RECONHECIMENTO
+                    </span>
+
+                    <h2>Animais</h2>
+                </div>
+
+                <button
+                    class="section-link"
+                    type="button"
+                >
+                    Ver todas
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+
+            <div class="animal-list">
+
+                @for (animal of animais; track animal.id) {
+
+                    <button
+                        class="animal-card"
+                        type="button"
+                    >
+
+                        <div
+                            class="animal-icon"
+                            [class]="animal.classeIcone"
+                        >
+                            <i [class]="animal.icone"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                {{ animal.nome }}
+                            </strong>
+
+                            <span>
+                                {{ animal.quantidadeFotos }}
+                                {{ animal.quantidadeFotos === 1 ? 'foto' : 'fotos' }}
+                            </span>
+
+                        </div>
+
+                    </button>
+
+                }
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FOTOS RECENTES
+        ====================================================== -->
+
+        <section class="gallery-section">
+
+            <div class="gallery-section-header">
+
+                <div>
+
+                    <span class="section-label">
+                        MEMÓRIAS
+                    </span>
+
+                    <h2>
+                        Fotos recentes
+                    </h2>
+
+                </div>
+
+
+                <div class="gallery-sort">
+
+                    <span>Ordenar por</span>
+
+                    <select
+                        [value]="ordenacao"
+                        (change)="alterarOrdenacao($event)"
+                    >
+
+                        <option value="recent">
+                            Mais recentes
+                        </option>
+
+                        <option value="oldest">
+                            Mais antigas
+                        </option>
+
+                        <option value="name">
+                            Nome
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 GRUPOS DINÂMICOS POR DATA
+            ================================================== -->
+
+            @for (grupo of gruposPorData; track grupo.chave) {
+
+                <div class="date-group">
+
+                    <div class="date-title">
+                        {{ grupo.titulo }}
+                    </div>
+
+
+                    <div class="photo-grid">
+
+                        @for (item of grupo.itens; track item.id) {
+
+                            <article
+                                class="photo-card"
+                                (click)="abrirImagem(item)"
+                            >
+
+                                <img
+                                    [src]="item.url"
+                                    [alt]="item.nome"
+                                >
+
+
+                                @if (item.tipo === 'video') {
+
+                                    <div class="video-indicator">
+
+                                        <i class="fa-solid fa-play"></i>
+
+                                    </div>
+
+                                }
+
+
+                                <div class="photo-overlay">
+
+                                    <span>
+                                        {{ item.nome }}
+
+                                        @if (
+                                            item.tipo === 'video' &&
+                                            item.duracao
+                                        ) {
+                                            · {{ item.duracao }}
+                                        }
+                                    </span>
+
+                                </div>
+
+                            </article>
+
+                        }
+
+                    </div>
+
+                </div>
+
+            }
+
+
+            <!-- =================================================
+                 NENHUM RESULTADO
+            ================================================== -->
+
+            @if (gruposPorData.length === 0) {
+
+                <div class="gallery-empty">
+
+                    <i class="fa-solid fa-image"></i>
+
+                    <p>
+                        Nenhuma foto ou vídeo encontrado.
+                    </p>
+
+                </div>
+
+            }
+
+        </section>
+
+    </section>
+
+
+    <!-- =========================================================
+         MODAL DE VISUALIZAÇÃO
+    ========================================================== -->
+
+    @if (imagemSelecionada; as item) {
+
+        <div
+            class="photo-modal show"
+            (click)="fecharImagem()"
+        >
+
+            <button
+                class="modal-close"
+                type="button"
+                title="Fechar"
+                (click)="fecharImagem(); $event.stopPropagation()"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+
+            <img
+                [src]="item.url"
+                [alt]="item.nome"
+                (click)="$event.stopPropagation()"
+            >
+
+        </div>
+
+    }
+
+</app-page-shell>
