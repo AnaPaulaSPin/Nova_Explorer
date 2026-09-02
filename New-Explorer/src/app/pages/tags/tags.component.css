@@ -660,7 +660,7 @@
 
     flex-shrink: 0;
 
-    color: #6354d8;
+    overflow: hidden;
 
     background:
         linear-gradient(
@@ -672,8 +672,6 @@
     border: 1px solid #ddd8ff;
     border-radius: 15px;
 
-    font-size: 21px;
-
     box-shadow:
         0 5px 14px rgba(99, 84, 216, 0.12);
 
@@ -681,6 +679,23 @@
         transform 0.2s,
         box-shadow 0.2s;
 }
+
+
+/* Imagem do Novi */
+
+.suggestion-icon.novi-icon img {
+    width: 115%;
+    height: 115%;
+
+    display: block;
+
+    object-fit: contain;
+
+    transform: scale(1.05);
+}
+
+
+/* Efeito ao passar o mouse */
 
 .suggestion-icon.novi-icon:hover {
     transform: translateY(-2px);
@@ -1047,7 +1062,11 @@
     .suggestion-icon.novi-icon {
         width: 48px;
         height: 48px;
-        font-size: 19px;
+    }
+
+    .suggestion-icon.novi-icon img {
+        width: 118%;
+        height: 118%;
     }
 
     .suggestion-header span {

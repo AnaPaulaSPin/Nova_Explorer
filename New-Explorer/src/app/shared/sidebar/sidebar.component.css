@@ -1,65 +1,484 @@
 :host {
-  --primary: #5b5ce2;
-  --primary-light: #f0f0ff;
-  --text: #20222b;
-  --text-secondary: #707382;
-  --text-muted: #a2a5b1;
-  --border: #e5e6ec;
-  --sidebar-width: 270px;
-  display: block;
+
+    --primary: #5b5ce2;
+    --primary-light: #f0f0ff;
+
+    --text: #20222b;
+    --text-secondary: #707382;
+    --text-muted: #a2a5b1;
+
+    --border: #e5e6ec;
+
+    --sidebar-width: 270px;
+
+    display: block;
 }
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
 
 .sidebar {
-  width: var(--sidebar-width);
-  height: 100vh;
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  padding: 28px 17px 20px;
-  background: #fff;
-  border-right: 1px solid var(--border);
-  z-index: 10;
+
+    width: var(--sidebar-width);
+    height: 100vh;
+
+    position: fixed;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 28px 17px 20px;
+
+    background: #fff;
+
+    border-right: 1px solid var(--border);
+
+    z-index: 10;
 }
 
-.brand { display: flex; align-items: center; gap: 13px; padding: 0 11px; margin-bottom: 42px; }
-.brand-icon { width: 43px; height: 43px; display: grid; place-items: center; color: #fff; background: linear-gradient(145deg, #7475f3, #5354d7); border-radius: 12px; box-shadow: 0 6px 15px #5b5ce230; }
-.brand-name { display: flex; flex-direction: column; }
-.brand-name strong { font-size: 19px; line-height: 1.1; }
-.brand-name span { margin-top: 4px; color: var(--text-muted); font-size: 11px; }
-.sidebar-content { flex: 1; overflow-y: auto; }
-.sidebar-group { margin-bottom: 34px; }
-.sidebar-title { color: var(--text-muted); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; }
-.navigation { display: flex; flex-direction: column; gap: 5px; margin-top: 12px; }
-.nav-item { min-height: 48px; display: flex; align-items: center; gap: 14px; padding: 0 14px; color: var(--text-secondary); border-radius: 12px; text-decoration: none; font-size: 14px; transition: .2s; }
-.nav-item i { width: 21px; text-align: center; font-size: 15px; }
-.nav-item:hover, .footer-item:hover, .device-item:hover { background: #f7f7fa; }
-.nav-item.active { color: var(--primary); background: var(--primary-light); font-weight: 650; }
-.sidebar-title-row { display: flex; align-items: center; justify-content: space-between; padding: 0 11px; margin-bottom: 12px; }
-.small-icon-button { width: 31px; height: 31px; border: 0; display: grid; place-items: center; background: transparent; color: var(--text-muted); cursor: pointer; border-radius: 8px; }
-.small-icon-button:hover { background: var(--primary-light); color: var(--primary); }
-.devices { display: flex; flex-direction: column; gap: 4px; }
-.device-item { min-height: 61px; display: flex; align-items: center; gap: 11px; padding: 7px 10px; border-radius: 12px; }
-.device-icon { width: 39px; height: 39px; display: grid; place-items: center; flex-shrink: 0; border-radius: 10px; }
-.computer { color: #5b6ee1; background: #eef1ff; }
-.phone { color: #6b55c7; background: #f1edff; }
-.cloud { color: #4b9cc8; background: #eaf8ff; }
-.device-info, .profile-info { flex: 1; display: flex; flex-direction: column; }
-.device-info strong { font-size: 12px; }
-.device-info span, .profile-info span { margin-top: 4px; color: var(--text-muted); font-size: 10px; }
-.status-dot { width: 7px; height: 7px; background: #54c989; border-radius: 50%; }
-.sidebar-footer { padding-top: 17px; border-top: 1px solid var(--border); }
-.footer-item { height: 45px; display: flex; align-items: center; gap: 13px; padding: 0 12px; color: var(--text-secondary); border-radius: 11px; text-decoration: none; font-size: 13px; }
-.profile-mini { display: flex; align-items: center; gap: 10px; padding: 11px 9px; margin-top: 10px; }
-.profile-avatar { width: 37px; height: 37px; display: grid; place-items: center; color: var(--primary); background: #e8e8ff; border-radius: 10px; font-size: 13px; font-weight: bold; }
-.profile-info strong { font-size: 12px; }
+
+/* =========================================================
+   MARCA / NOVI
+========================================================= */
+
+.brand {
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 0 11px;
+
+    margin-bottom: 42px;
+}
+
+.brand-icon {
+
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    background: linear-gradient(
+        145deg,
+        #7475f3,
+        #5354d7
+    );
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 6px 15px #5b5ce230;
+}
+
+.brand-icon img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   NOME DA APLICAÇÃO
+========================================================= */
+
+.brand-name {
+
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-name strong {
+
+    font-size: 19px;
+    line-height: 1.1;
+}
+
+.brand-name span {
+
+    margin-top: 4px;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   CONTEÚDO
+========================================================= */
+
+.sidebar-content {
+
+    flex: 1;
+
+    overflow-y: auto;
+}
+
+.sidebar-group {
+
+    margin-bottom: 34px;
+}
+
+.sidebar-title {
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: .1em;
+}
+
+.navigation {
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    margin-top: 12px;
+}
+
+
+/* =========================================================
+   NAVEGAÇÃO
+========================================================= */
+
+.nav-item {
+
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 0 14px;
+
+    color: var(--text-secondary);
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: .2s;
+}
+
+.nav-item i {
+
+    width: 21px;
+
+    text-align: center;
+
+    font-size: 15px;
+}
+
+.nav-item:hover,
+.footer-item:hover,
+.device-item:hover {
+
+    background: #f7f7fa;
+}
+
+.nav-item.active {
+
+    color: var(--primary);
+
+    background: var(--primary-light);
+
+    font-weight: 650;
+}
+
+
+/* =========================================================
+   TÍTULO DAS SEÇÕES
+========================================================= */
+
+.sidebar-title-row {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 11px;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   BOTÃO PEQUENO
+========================================================= */
+
+.small-icon-button {
+
+    width: 31px;
+    height: 31px;
+
+    border: 0;
+
+    display: grid;
+    place-items: center;
+
+    background: transparent;
+
+    color: var(--text-muted);
+
+    cursor: pointer;
+
+    border-radius: 8px;
+}
+
+.small-icon-button:hover {
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   DISPOSITIVOS
+========================================================= */
+
+.devices {
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.device-item {
+
+    min-height: 61px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 7px 10px;
+
+    border-radius: 12px;
+}
+
+.device-icon {
+
+    width: 39px;
+    height: 39px;
+
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+}
+
+.computer {
+
+    color: #5b6ee1;
+
+    background: #eef1ff;
+}
+
+.phone {
+
+    color: #6b55c7;
+
+    background: #f1edff;
+}
+
+.cloud {
+
+    color: #4b9cc8;
+
+    background: #eaf8ff;
+}
+
+
+/* =========================================================
+   INFORMAÇÕES DOS DISPOSITIVOS
+========================================================= */
+
+.device-info,
+.profile-info {
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.device-info strong {
+
+    font-size: 12px;
+}
+
+.device-info span,
+.profile-info span {
+
+    margin-top: 4px;
+
+    color: var(--text-muted);
+
+    font-size: 10px;
+}
+
+.status-dot {
+
+    width: 7px;
+    height: 7px;
+
+    background: #54c989;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   RODAPÉ
+========================================================= */
+
+.sidebar-footer {
+
+    padding-top: 17px;
+
+    border-top: 1px solid var(--border);
+}
+
+.footer-item {
+
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 0 12px;
+
+    color: var(--text-secondary);
+
+    border-radius: 11px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   PERFIL
+========================================================= */
+
+.profile-mini {
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 11px 9px;
+
+    margin-top: 10px;
+}
+
+.profile-avatar {
+
+    width: 37px;
+    height: 37px;
+
+    display: grid;
+    place-items: center;
+
+    color: var(--primary);
+
+    background: #e8e8ff;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.profile-info strong {
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
 
 @media (max-width: 950px) {
-  .sidebar { width: 82px; padding-inline: 12px; }
-  .brand-name, .sidebar-title, .nav-item span, .device-info, .sidebar-footer span, .sidebar-title-row .small-icon-button { display: none; }
-  .brand { justify-content: center; padding: 0; }
-  .nav-item, .sidebar-title-row, .device-item { justify-content: center; padding-inline: 0; }
+
+    .sidebar {
+
+        width: 82px;
+
+        padding-inline: 12px;
+    }
+
+    .brand-name,
+    .sidebar-title,
+    .nav-item span,
+    .device-info,
+    .sidebar-footer span,
+    .sidebar-title-row .small-icon-button {
+
+        display: none;
+    }
+
+    .brand {
+
+        justify-content: center;
+
+        padding: 0;
+    }
+
+    .nav-item,
+    .sidebar-title-row,
+    .device-item {
+
+        justify-content: center;
+
+        padding-inline: 0;
+    }
+
 }
 
+
 @media (max-width: 680px) {
-  .sidebar { width: 0; padding: 0; border: 0; overflow: hidden; }
+
+    .sidebar {
+
+        width: 0;
+
+        padding: 0;
+
+        border: 0;
+
+        overflow: hidden;
+    }
+
 }

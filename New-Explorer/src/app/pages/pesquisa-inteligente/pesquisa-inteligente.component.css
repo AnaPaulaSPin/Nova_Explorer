@@ -48,47 +48,101 @@ line-height: 1.6;
 }
 
 /* =========================================================
-CARD DE PESQUISA
+   CARD DE PESQUISA
 ========================================================= */
 
 .search-card {
-display: flex;
-gap: 1.25rem;
-padding: 1.5rem;
-border: 1px solid #e5e7eb;
-border-radius: 1.25rem;
-background: #ffffff;
-box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+    display: flex;
+    gap: 1.25rem;
+
+    padding: 1.5rem;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 1.25rem;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 8px 30px rgba(15, 23, 42, 0.06);
 }
+
+
+/* =========================================================
+   ÍCONE DO NOVI
+========================================================= */
 
 .search-card__icon {
-flex: 0 0 48px;
-width: 48px;
-height: 48px;
+    flex: 0 0 48px;
 
-display: flex;
-align-items: center;
-justify-content: center;
+    width: 48px;
+    height: 48px;
 
-border-radius: 0.9rem;
-background: #f3e8ff;
-color: #8b5cf6;
-font-size: 1.15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    border-radius: 0.9rem;
+
+    background:
+        linear-gradient(
+            145deg,
+            #eeebff,
+            #e4e0ff
+        );
+
+    border: 1px solid #ddd8ff;
+
+    box-shadow:
+        0 5px 14px rgba(99, 84, 216, 0.12);
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
 }
 
+.search-card__icon img {
+    width: 115%;
+    height: 115%;
+
+    display: block;
+
+    object-fit: contain;
+
+    transform: scale(1.05);
+}
+
+.search-card__icon:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(99, 84, 216, 0.18);
+}
+
+
+/* =========================================================
+   CONTEÚDO DO CARD
+========================================================= */
+
 .search-card__content {
-flex: 1;
-min-width: 0;
+    flex: 1;
+    min-width: 0;
 }
 
 .search-card__content label {
-display: block;
-margin-bottom: 0.65rem;
+    display: block;
 
-color: #6b7280;
-font-size: 0.72rem;
-font-weight: 700;
-letter-spacing: 0.08em;
+    margin-bottom: 0.65rem;
+
+    color: #6b7280;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
 }
 
 /* =========================================================
