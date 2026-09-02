@@ -2,7 +2,7 @@
 
 Este projeto contém duas versões da aplicação **Nova Explorer**:
 
-- **Nova-explorer** → versão inicial/protótipo desenvolvida apenas com HTML e SCSS.
+- **Nova-explorer** → versão inicial/protótipo desenvolvida com HTML, SCSS e JavaScript.
 - **New-explorer** → versão atual da aplicação desenvolvida utilizando Angular.
 
 ---
@@ -13,11 +13,13 @@ Este projeto contém duas versões da aplicação **Nova Explorer**:
 Projeto/
 │
 ├── Nova-explorer/
-│   └── Versão HTML + SCSS
+│   └── Versão inicial — HTML + SCSS + JavaScript
 │
 └── New-explorer/
-    └── Projeto Angular
+    └── Versão atual — Angular + TypeScript + SCSS
 ```
+
+---
 
 ## 🎨 Nova-explorer
 
@@ -29,22 +31,22 @@ Essa versão foi desenvolvida utilizando:
 - SCSS
 - JavaScript
 
-Ela serve como **modelo visual e de referência** para a aplicação.
+Ela serve como **modelo visual e referência** para a implementação atual da aplicação.
 
 ---
 
 ## ⚙️ New-explorer
 
-A pasta **New-explorer** contém a versão atual da aplicação desenvolvida utilizando **Angular**.
+A pasta **New-explorer** contém a versão atual da aplicação, desenvolvida utilizando **Angular**.
 
-Tecnologias utilizadas:
+### Tecnologias utilizadas
 
 - Angular
 - TypeScript
 - HTML
 - SCSS
 
-Essa é a versão que deve ser utilizada para executar e continuar o desenvolvimento da aplicação.
+Essa é a versão que deve ser utilizada para **executar e continuar o desenvolvimento da aplicação**.
 
 ---
 
@@ -62,7 +64,7 @@ New-explorer
 
 ---
 
-## 2. Abrir o terminal na pasta New-explorer
+## 2. Abrir o terminal na pasta `New-explorer`
 
 Entre na pasta utilizando o terminal:
 
@@ -76,7 +78,7 @@ A pasta deve conter o arquivo:
 package.json
 ```
 
-Esse arquivo contém as informações e dependências necessárias para o projeto Angular.
+O arquivo `package.json` contém as informações e dependências necessárias para o projeto Angular.
 
 ---
 
@@ -90,7 +92,7 @@ Execute:
 npm install
 ```
 
-Esse comando irá instalar todas as dependências definidas no arquivo `package.json`.
+Esse comando instala todas as dependências definidas no arquivo `package.json`.
 
 Após a instalação, será criada a pasta:
 
@@ -110,7 +112,7 @@ Depois que as dependências forem instaladas, execute:
 ng serve -o
 ```
 
-O comando irá iniciar o servidor de desenvolvimento do Angular.
+Esse comando inicia o servidor de desenvolvimento do Angular.
 
 A opção `-o` faz com que a aplicação seja aberta automaticamente no navegador.
 
@@ -118,7 +120,7 @@ A opção `-o` faz com que a aplicação seja aberta automaticamente no navegado
 
 # 🔄 Executar o projeto novamente
 
-Depois que as dependências já tiverem sido instaladas, não é necessário executar `npm install` novamente.
+Depois que as dependências já tiverem sido instaladas, **não é necessário executar `npm install` novamente**.
 
 Basta entrar na pasta do projeto:
 
@@ -148,7 +150,7 @@ npx ng serve -o
 
 ## Problemas com dependências
 
-Caso apareçam erros relacionados às dependências do projeto, execute:
+Caso apareçam erros relacionados às dependências do projeto, execute novamente:
 
 ```bash
 npm install
@@ -181,8 +183,8 @@ ng serve -o
 
 ---
 
-## 📝 Observação
+# 📝 Observação
 
-A pasta **Nova-explorer** representa o protótipo inicial da aplicação e deve ser utilizada como referência visual e estrutural.
+A pasta **Nova-explorer** representa o **protótipo inicial** da aplicação e deve ser utilizada como referência visual e estrutural.
 
-A pasta **New-explorer** representa a implementação atual em Angular e é a versão utilizada para execução e desenvolvimento da aplicação.
+A pasta **New-explorer** representa a **implementação atual em Angular** e é a versão utilizada para execução e desenvolvimento da aplicação.
