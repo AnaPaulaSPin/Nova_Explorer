@@ -232,8 +232,7 @@
             <!-- =================================================
                  ARQUIVOS
             ================================================== -->
-
-            <section class="section">
+<section class="section">
 
     <div class="section-header">
         <div>
@@ -252,10 +251,12 @@
 
             <article class="file-row">
 
-                <!-- Ícone do arquivo -->
                 <div
                     class="file-icon"
-                    [class]="arquivo.tipo"
+                    [class.pdf]="arquivo.tipo === 'pdf'"
+                    [class.image]="arquivo.tipo === 'image'"
+                    [class.word]="arquivo.tipo === 'word'"
+                    [class.video]="arquivo.tipo === 'video'"
                 >
                     @switch (arquivo.tipo) {
 
@@ -278,36 +279,40 @@
                     }
                 </div>
 
-
-                <!-- Informações do arquivo -->
                 <div class="file-info">
-
-                    <strong>
-                        {{ arquivo.nome }}
-                    </strong>
+                    <strong>{{ arquivo.nome }}</strong>
 
                     <span>
                         {{ arquivo.data }} · {{ arquivo.tamanho }}
                     </span>
-
                 </div>
 
-
-                <!-- Tags associadas ao arquivo -->
                 <div class="file-tags">
 
                     @for (tag of arquivo.tags; track tag.id) {
 
                         <span
                             class="mini-tag"
-                            [class]="tag.classeIcone"
+                            [class.purple]="tag.classeIcone === 'purple'"
+                            [class.blue]="tag.classeIcone === 'blue'"
+                            [class.pink]="tag.classeIcone === 'pink'"
+                            [class.green]="tag.classeIcone === 'green'"
+                            [class.orange]="tag.classeIcone === 'orange'"
+                            [class.cyan]="tag.classeIcone === 'cyan'"
                         >
+
                             <i
                                 class="fa-solid"
-                                [class]="tag.icone"
+                                [class.fa-graduation-cap]="tag.icone === 'fa-graduation-cap'"
+                                [class.fa-code]="tag.icone === 'fa-code'"
+                                [class.fa-file-lines]="tag.icone === 'fa-file-lines'"
+                                [class.fa-star]="tag.icone === 'fa-star'"
+                                [class.fa-image]="tag.icone === 'fa-image'"
+                                [class.fa-briefcase]="tag.icone === 'fa-briefcase'"
                             ></i>
 
                             {{ tag.nome }}
+
                         </span>
 
                     }
