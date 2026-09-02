@@ -1,0 +1,37 @@
+<aside class="sidebar">
+  <div class="brand">
+    <div class="brand-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+    <div class="brand-name"><strong>Nova</strong><span>Explorer</span></div>
+  </div>
+
+  <div class="sidebar-content">
+    <div class="sidebar-group">
+      <span class="sidebar-title">Principal</span>
+      <nav class="navigation" aria-label="Navegação principal">
+        @for (item of navigation; track item.path) {
+          <a class="nav-item" [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <i [class]="item.icon"></i>
+            <span>{{ item.label }}</span>
+          </a>
+        }
+      </nav>
+    </div>
+
+    <div class="sidebar-group">
+      <div class="sidebar-title-row">
+        <span class="sidebar-title">Dispositivos</span>
+        <button class="small-icon-button" type="button" aria-label="Adicionar dispositivo"><i class="fa-solid fa-plus"></i></button>
+      </div>
+      <div class="devices">
+        <div class="device-item"><div class="device-icon computer"><i class="fa-solid fa-laptop"></i></div><div class="device-info"><strong>Meu computador</strong><span>Este dispositivo</span></div><span class="status-dot"></span></div>
+        <div class="device-item"><div class="device-icon phone"><i class="fa-solid fa-mobile-screen"></i></div><div class="device-info"><strong>Meu celular</strong><span>Conectado</span></div><span class="status-dot"></span></div>
+        <div class="device-item"><div class="device-icon cloud"><i class="fa-solid fa-cloud"></i></div><div class="device-info"><strong>Minha nuvem</strong><span>Sincronizado</span></div><span class="status-dot"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sidebar-footer">
+    <a class="footer-item" href="#"><i class="fa-solid fa-gear"></i><span>Configurações</span></a>
+    <div class="profile-mini"><div class="profile-avatar">A</div><div class="profile-info"><strong>Ana</strong><span>Conta pessoal</span></div><button class="small-icon-button" type="button" aria-label="Mais opções do perfil"><i class="fa-solid fa-ellipsis"></i></button></div>
+  </div>
+</aside>

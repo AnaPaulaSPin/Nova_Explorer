@@ -1,0 +1,12 @@
+<header class="navbar">
+  <div class="navigation-controls">
+    <button class="navbar-button" type="button" title="Voltar" (click)="goBack()"><i class="fa-solid fa-arrow-left"></i></button>
+    <button class="navbar-button" type="button" title="Avançar" (click)="goForward()"><i class="fa-solid fa-arrow-right"></i></button>
+    <button class="navbar-button" type="button" title="Atualizar" (click)="reload()"><i class="fa-solid fa-rotate-right"></i></button>
+  </div>
+  <div class="location-bar"><i class="fa-solid fa-house location-home"></i><i class="fa-solid fa-chevron-right location-arrow"></i><span class="current-location">{{ currentLocation() }}</span><button class="location-more" type="button" aria-label="Mais localizações"><i class="fa-solid fa-chevron-down"></i></button></div>
+  <form class="global-search" (submit)="$event.preventDefault(); search(searchInput.value)">
+    <i class="fa-solid fa-magnifying-glass"></i><input #searchInput type="search" placeholder="Pesquisar em seus arquivos..." aria-label="Pesquisar em seus arquivos"><span class="search-key">Ctrl K</span>
+  </form>
+  <div class="navbar-actions"><button class="navbar-button" type="button" title="Notificações"><i class="fa-regular fa-bell"></i></button><button class="navbar-button" type="button" title="Mais opções"><i class="fa-solid fa-ellipsis"></i></button></div>
+</header>

@@ -1,0 +1,8 @@
+<section class="section">
+  <div class="section-header"><div><span class="section-label">SEUS DISPOSITIVOS</span><h2>Tudo conectado</h2></div><button class="see-all" type="button">Ver todos <i class="fa-solid fa-arrow-right"></i></button></div>
+  <div class="device-cards">
+    @for (device of devices; track device.name) {
+      <article class="device-card"><div class="device-card-icon {{ device.className }}"><i [class]="device.icon"></i></div><div class="device-card-content"><strong>{{ device.name }}</strong><span>{{ device.files }}</span><div class="storage"><div class="storage-bar"><span [style.width.%]="device.percent"></span></div><small>{{ device.usage }}</small></div></div><span class="online">{{ device.status }}</span></article>
+    }
+  </div>
+</section>

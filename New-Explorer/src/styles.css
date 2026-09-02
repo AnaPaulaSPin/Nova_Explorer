@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+html,
+body {
+	min-height: 100%;
+	margin: 0;
+}
+
+:root {
+	--font-ui: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+body {
+	background: #f7f8fc;
+	color: #20222b;
+	font-family: var(--font-ui);
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+app-root {
+	display: block;
+	min-height: 100vh;
+}
+
+button,
+input {
+	font: inherit;
+}

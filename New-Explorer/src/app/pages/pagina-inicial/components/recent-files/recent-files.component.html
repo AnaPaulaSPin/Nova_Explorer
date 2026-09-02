@@ -1,0 +1,8 @@
+<section class="section">
+  <div class="section-header"><div><span class="section-label">RECENTE</span><h2>Arquivos acessados recentemente</h2></div><a class="see-all" routerLink="/meus-arquivos">Ver todos <i class="fa-solid fa-arrow-right"></i></a></div>
+  <div class="recent-files">
+    @for (file of files; track file.name) {
+      <article class="recent-file"><div class="recent-file-icon {{ file.className }}"><i [class]="file.icon"></i></div><div class="recent-file-info"><strong>{{ file.name }}</strong><span>{{ file.details }}</span></div><span class="recent-size">{{ file.size }}</span></article>
+    }
+  </div>
+</section>

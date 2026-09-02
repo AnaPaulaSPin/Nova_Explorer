@@ -1,0 +1,5 @@
+:host { display: block; --background: #f7f8fc; --sidebar-width: 270px; }
+.app-shell { min-height: 100vh; background: var(--background); }
+.main { min-height: 100vh; margin-left: var(--sidebar-width); }
+@media (max-width: 950px) { .main { margin-left: 82px; } }
+@media (max-width: 680px) { .main { margin-left: 0; } }

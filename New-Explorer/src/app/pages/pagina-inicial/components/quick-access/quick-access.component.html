@@ -1,0 +1,8 @@
+<section class="section">
+  <div class="section-header"><div><span class="section-label">ACESSO RÁPIDO</span><h2>Onde você quer ir?</h2></div></div>
+  <div class="quick-grid">
+    @for (link of links; track link.path) {
+      <a class="quick-card {{ link.className }}" [routerLink]="link.path"><div class="quick-icon"><i [class]="link.icon"></i></div><div class="quick-content"><strong>{{ link.title }}</strong><span>{{ link.description }}</span></div><i class="fa-solid fa-arrow-right card-arrow"></i></a>
+    }
+  </div>
+</section>
