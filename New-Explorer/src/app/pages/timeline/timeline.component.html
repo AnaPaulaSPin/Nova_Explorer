@@ -1,0 +1,461 @@
+<app-page-shell title="Timeline">
+
+  <section class="timeline-page">
+
+    <section class="timeline-header">
+
+      <div class="header-content">
+
+        <span class="section-label">
+          HISTÓRICO
+        </span>
+
+        <h2>Timeline</h2>
+
+        <p>
+          Acompanhe as alterações e movimentações
+          dos seus arquivos ao longo do tempo.
+        </p>
+
+      </div>
+
+      <div class="header-icon">
+        <i class="fa-solid fa-clock-rotate-left"></i>
+      </div>
+
+    </section>
+
+
+    <section class="filters-section">
+
+      <div class="filter-group">
+
+        <span class="filter-label">
+          Período
+        </span>
+
+        <div class="filter-buttons">
+
+          <button
+            type="button"
+            class="filter-button"
+            [class.active]="periodoSelecionado === 'all'"
+            (click)="selecionarPeriodo('all')"
+          >
+            <i class="fa-solid fa-calendar-days"></i>
+            Tudo
+          </button>
+
+          <button
+            type="button"
+            class="filter-button"
+            [class.active]="periodoSelecionado === 'today'"
+            (click)="selecionarPeriodo('today')"
+          >
+            Hoje
+          </button>
+
+          <button
+            type="button"
+            class="filter-button"
+            [class.active]="periodoSelecionado === 'week'"
+            (click)="selecionarPeriodo('week')"
+          >
+            Esta semana
+          </button>
+
+          <button
+            type="button"
+            class="filter-button"
+            [class.active]="periodoSelecionado === 'month'"
+            (click)="selecionarPeriodo('month')"
+          >
+            Este mês
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div class="filter-group">
+
+        <label
+          class="filter-label"
+          for="timelineDate"
+        >
+          Escolher data
+        </label>
+
+        <input
+          id="timelineDate"
+          type="date"
+          [value]="dataSelecionada"
+          (change)="selecionarData($event)"
+        />
+
+      </div>
+
+
+      <div class="filter-group">
+
+        <label
+          class="filter-label"
+          for="actionFilter"
+        >
+          Tipo de alteração
+        </label>
+
+        <select
+          id="actionFilter"
+          [value]="tipoAlteracaoSelecionado"
+          (change)="selecionarTipoAlteracao($event)"
+        >
+
+          <option value="all">
+            Todas as alterações
+          </option>
+
+          <option value="created">
+            Arquivos adicionados
+          </option>
+
+          <option value="modified">
+            Arquivos modificados
+          </option>
+
+          <option value="deleted">
+            Arquivos excluídos
+          </option>
+
+          <option value="moved">
+            Arquivos movidos
+          </option>
+
+        </select>
+
+      </div>
+
+
+      @if (
+        periodoSelecionado !== 'all' ||
+        tipoAlteracaoSelecionado !== 'all' ||
+        dataSelecionada
+      ) {
+
+        <button
+          type="button"
+          class="clear-filters"
+          (click)="limparFiltros()"
+        >
+          <i class="fa-solid fa-xmark"></i>
+          Limpar filtros
+        </button>
+
+      }
+
+    </section>
+
+
+    <section class="summary">
+
+      <div class="summary-card">
+
+        <div class="summary-icon created">
+          <i class="fa-solid fa-plus"></i>
+        </div>
+
+        <div>
+          <strong>{{ quantidadeCriados }}</strong>
+          <span>Adicionados</span>
+        </div>
+
+      </div>
+
+
+      <div class="summary-card">
+
+        <div class="summary-icon modified">
+          <i class="fa-solid fa-pen"></i>
+        </div>
+
+        <div>
+          <strong>{{ quantidadeModificados }}</strong>
+          <span>Modificados</span>
+        </div>
+
+      </div>
+
+
+      <div class="summary-card">
+
+        <div class="summary-icon deleted">
+          <i class="fa-solid fa-trash"></i>
+        </div>
+
+        <div>
+          <strong>{{ quantidadeExcluidos }}</strong>
+          <span>Excluídos</span>
+        </div>
+
+      </div>
+
+
+      <div class="summary-card">
+
+        <div class="summary-icon moved">
+          <i class="fa-solid fa-arrow-right-arrow-left"></i>
+        </div>
+
+        <div>
+          <strong>{{ quantidadeMovidos }}</strong>
+          <span>Movidos</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="timeline-section">
+
+      <div class="timeline-day">
+
+        <div class="day-header">
+
+          <div>
+
+            <span class="day-label">
+
+              @if (dataSelecionada) {
+                DATA SELECIONADA
+              } @else if (periodoSelecionado === 'today') {
+                HOJE
+              } @else if (periodoSelecionado === 'week') {
+                ESTA SEMANA
+              } @else if (periodoSelecionado === 'month') {
+                ESTE MÊS
+              } @else {
+                HISTÓRICO
+              }
+
+            </span>
+
+            <h3>
+
+              @if (dataSelecionada) {
+                {{ formatarData(dataSelecionada) }}
+              } @else {
+                Histórico de alterações
+              }
+
+            </h3>
+
+          </div>
+
+          <span class="event-count">
+            {{ quantidadeEventos }}
+            {{ quantidadeEventos === 1 ? 'alteração' : 'alterações' }}
+          </span>
+
+        </div>
+
+
+        <div class="timeline">
+
+          @for (
+            evento of eventosFiltrados;
+            track evento.nome + evento.data + evento.horario
+          ) {
+
+            <article class="timeline-event">
+
+              <div class="event-line">
+
+                <div
+                  class="event-dot"
+                  [class.created]="evento.acao === 'created'"
+                  [class.modified]="evento.acao === 'modified'"
+                  [class.deleted]="evento.acao === 'deleted'"
+                  [class.moved]="evento.acao === 'moved'"
+                >
+
+                  @if (evento.acao === 'created') {
+                    <i class="fa-solid fa-plus"></i>
+                  }
+
+                  @if (evento.acao === 'modified') {
+                    <i class="fa-solid fa-pen"></i>
+                  }
+
+                  @if (evento.acao === 'deleted') {
+                    <i class="fa-solid fa-trash"></i>
+                  }
+
+                  @if (evento.acao === 'moved') {
+                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                  }
+
+                </div>
+
+              </div>
+
+
+              <div class="event-card">
+
+                <div class="event-top">
+
+                  <div class="event-file">
+
+                    <div
+                      class="file-icon"
+                      [class.document]="evento.classeArquivo === 'document'"
+                      [class.pdf]="evento.classeArquivo === 'pdf'"
+                      [class.image]="evento.classeArquivo === 'image'"
+                      [class.archive]="evento.classeArquivo === 'archive'"
+                      [class.code]="evento.classeArquivo === 'code'"
+                      [class.spreadsheet]="evento.classeArquivo === 'spreadsheet'"
+                      [class.presentation]="evento.classeArquivo === 'presentation'"
+                    >
+
+                      <i [class]="evento.iconeArquivo"></i>
+
+                    </div>
+
+                    <div>
+
+                      <strong>
+                        {{ evento.nome }}
+                      </strong>
+
+                      <span>
+                        {{ evento.tipoArquivo }}
+                      </span>
+
+                    </div>
+
+                  </div>
+
+                  <div class="event-date">
+
+                    <time>
+                      {{ evento.horario }}
+                    </time>
+
+                    <small>
+                      {{ formatarDiaSemana(evento.data) }}
+                    </small>
+
+                  </div>
+
+                </div>
+
+
+                <div class="event-description">
+
+                  <span
+                    class="event-badge"
+                    [class.created]="evento.acao === 'created'"
+                    [class.modified]="evento.acao === 'modified'"
+                    [class.deleted]="evento.acao === 'deleted'"
+                    [class.moved]="evento.acao === 'moved'"
+                  >
+
+                    @if (evento.acao === 'created') {
+                      Adicionado
+                    }
+
+                    @if (evento.acao === 'modified') {
+                      Modificado
+                    }
+
+                    @if (evento.acao === 'deleted') {
+                      Excluído
+                    }
+
+                    @if (evento.acao === 'moved') {
+                      Movido
+                    }
+
+                  </span>
+
+                  <p>
+                    {{ evento.descricao }}
+                  </p>
+
+                </div>
+
+
+                <div class="event-footer">
+
+                  <span>
+
+                    <i [class]="evento.iconeDispositivo"></i>
+
+                    {{ evento.dispositivo }}
+
+                  </span>
+
+                  <button
+                    type="button"
+                    class="event-action"
+                    [class.restore]="evento.acao === 'deleted'"
+                  >
+
+                    @if (evento.acao === 'deleted') {
+                      Restaurar
+                    } @else {
+                      Ver arquivo
+                    }
+
+                  </button>
+
+                </div>
+
+              </div>
+
+            </article>
+
+          }
+
+
+          @if (eventosFiltrados.length === 0) {
+
+            <div class="empty-timeline">
+
+              <i class="fa-regular fa-folder-open"></i>
+
+              <strong>
+                Nenhuma alteração encontrada.
+              </strong>
+
+              <span>
+                Tente alterar os filtros da timeline.
+              </span>
+
+            </div>
+
+          }
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <div class="timeline-end">
+
+      <div class="timeline-end-icon">
+        <i class="fa-solid fa-check"></i>
+      </div>
+
+      <span>
+        Você chegou ao fim da timeline
+      </span>
+
+    </div>
+
+  </section>
+
+</app-page-shell>
